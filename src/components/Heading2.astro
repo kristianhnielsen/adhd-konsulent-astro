@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"h2"> {
+  color?: "red" | "light";
+}
+
+const { color = "red", ...props } = Astro.props as Props;
+---
+
+<h2
+  class={`font-bold text-2xl ${
+    color === "red" ? "text-rose-800" : "text-slate-50"
+  }`}
+  {...props}
+>
+  <slot />
+</h2>

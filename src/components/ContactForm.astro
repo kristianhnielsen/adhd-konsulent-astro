@@ -1,0 +1,56 @@
+---
+import Heading2 from "./Heading2.astro";
+import type { HTMLAttributes } from "astro/types";
+const { ...props } = Astro.props as HTMLAttributes<"form">;
+---
+
+<form
+  action=""
+  class="col-span-6 grid w-full grid-cols-2 gap-4 rounded-lg bg-neutral-200 p-8 text-sm"
+  {...props}
+>
+  <Heading2 class="sm:col-span-2">Bliv Kontaktet</Heading2>
+  <label for="navn" class="flex flex-col sm:col-span-2">
+    Navn
+    <input
+      type="text"
+      id="navn"
+      placeholder="Navn"
+      class="rounded-lg p-4 shadow outline-slate-700 transition-all focus-visible:outline-offset-4"
+    />
+  </label>
+  <label for="phone" class="flex flex-col">
+    Telefon
+    <input
+      type="tel"
+      id="phone"
+      placeholder="Telefon"
+      class="rounded-lg p-4 shadow outline-slate-700 transition-all focus-visible:outline-offset-4"
+    />
+  </label>
+  <label for="email" class="flex flex-col">
+    E-mail
+    <input
+      type="email"
+      id="email"
+      placeholder="E-mail"
+      class="rounded-lg p-4 shadow outline-slate-700 transition-all focus-visible:outline-offset-4"
+    />
+  </label>
+  <label for="message" class="flex flex-col sm:col-span-2">
+    Besked (valgfri)
+    <textarea
+      name="message"
+      id="message"
+      cols="30"
+      rows="10"
+      placeholder="Fortæl lidt om jeres familie og situation..."
+      class="resize-none rounded-lg p-4 shadow outline-slate-700 transition-all focus-visible:outline-offset-4"
+    ></textarea>
+  </label>
+  <button
+    type="submit"
+    class="cursor-pointer rounded-lg bg-rose-800 px-8 py-4 text-base font-bold text-slate-50 outline-slate-700 transition-all hover:bg-rose-900 focus-visible:outline-offset-4"
+    >Send</button
+  >
+</form>

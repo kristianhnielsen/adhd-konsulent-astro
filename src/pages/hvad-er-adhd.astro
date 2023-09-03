@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import Button from "../components/Button.astro";
+import Heading2 from "../components/Heading2.astro";
+import Heading1 from "../components/Heading1.astro";
+
+import ChildOnPillar from "../assets/images/child-on-pillar.jpg";
+import GirlSpeedWalking from "../assets/images/girl-speed-walking.jpg";
+import PillowFight from "../assets/images/pillow-fight.jpg";
+---
+
+<PageLayout title="Hvad Er ADHD? | ADHD Og Autisme Konsulent" description="">
+  <ColumnLayout>
+    <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
+      <Heading1>Hvad er autisme?</Heading1>
+      <div class="grid gap-4">
+        <p>
+          Omkring 2-3% af alle børn får diagnosen ADHD. ADHD er en
+          neuropsykiatrisk lidelse, der påvirker personens evne til at
+          opretholde opmærksomhed og regulere aktivitetsniveauet. ADHD står for
+          Attention Deficit / Hyperactivity Disorder.
+        </p>
+        <ul class="list-disc">
+          ADHD er karakteriseret ved kernesymptomerne:
+          <li class="ml-8">Opmærksomhedsforstyrrelse</li>
+          <li class="ml-8">Hyperaktivitet</li>
+          <li class="ml-8">Impulsivitet</li>
+        </ul>
+        <p>
+          Det er ikke nødvendigt at have symptomer inden for alle tre områder
+          for at få diagnosen.
+        </p>
+      </div>
+      <Heading2>Hvad er ADD?</Heading2>
+      <p>
+        Diagnosen ADD bruges til at beskrive "den stille ADHD", hvor personer
+        oplever betydelige opmærksomhedsforstyrrelser, men uden, eller med
+        mindre synlig, hyperaktivitet.
+      </p>
+    </article>
+    <Image
+      src={PillowFight}
+      alt="To børn har pudekamp på en seng"
+      quality={90}
+      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+    />
+  </ColumnLayout>
+  <ColumnLayout>
+    <Image
+      src={GirlSpeedWalking}
+      alt="Gående fartsløret pige foran grønt hus"
+      quality={90}
+      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+    />
+    <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
+      <Heading2>Hvad skyldes symptomerne?</Heading2>
+      <div class="grid gap-4">
+        <p>
+          Forskning indikerer, at symptomerne ved ADHD er forbundet med en
+          reduceret evne i hjernen til at transportere signalstofferne dopamin
+          og noradrenalin.
+        </p>
+        <p>
+          ADHD er et område med intensiv forskning, og vores forståelse af
+          symptomerne, årsagerne, behandlingsmetoder og pædagogiske tilgange
+          udvikles konstant.
+        </p>
+      </div>
+    </article>
+  </ColumnLayout>
+  <ColumnLayout>
+    <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
+      <Heading2>Kan man leve et normalt liv med ADHD?</Heading2>
+      <div class="grid gap-4">
+        <p>
+          De fleste mennesker med ADHD lever et godt og almindeligt liv.
+          Mennesker med ADHD har normalt intelligens og er lige så individuelt
+          forskellige i deres personlighed som alle andre.
+        </p>
+        <p>
+          ADHD's omfang og symptomer varierer markant, og vanskelighederne vil
+          desuden afhænge af den enkeltes livssituation og tilgængelige
+          muligheder for støtte og behandling.
+        </p>
+      </div>
+    </article>
+    <Image
+      src={ChildOnPillar}
+      alt="Pige som læser i en bog mens hun sidder på en høj sten"
+      quality={90}
+      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+    />
+  </ColumnLayout>
+  <section class="flex flex-col items-center gap-4">
+    <p class="text-lg">
+      Lær mere om ADHD / ADD på ADHD-foreningens hjemmeside.
+    </p>
+    <Button href="" theme="red" arrow size="md">Besøg ADHD.dk</Button>
+    <p>eller</p>
+    <Button href="" theme="dark" arrow size="md">Kontakt Lasse</Button>
+  </section>
+</PageLayout>

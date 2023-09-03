@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import Heading2 from "../components/Heading2.astro";
+import Heading1 from "../components/Heading1.astro";
+
+// Images
+import HouseSvg from "../assets/icons/HouseSvg.astro";
+import BriefcaseSvg from "../assets/icons/BriefcaseSvg.astro";
+import GradutionSvg from "../assets/icons/GradutionSvg.astro";
+import LasseAndWifeImg from "../assets/images/lasse-family.png";
+import BooksImg from "../assets/images/book-stack.jpg";
+---
+
+<PageLayout title="Om | ADHD Og Autisme Konsulent" description="">
+  <ColumnLayout>
+    <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
+      <Heading1>Om Lasse</Heading1>
+      <div class="grid gap-4">
+        <p>
+          Mit navn er Lasse, og jeg er en dedikeret rådgiver med mere end 20 års
+          erfaring inden for at hjælpe familier, der har behov for støtte til at
+          håndtere diagnoser som ADHD og/eller autisme. Jeg brænder for at gøre
+          en positiv forskel i folks liv og har specialiseret mig i at give
+          professionel vejledning og støtte til familier, der står over for
+          disse udfordringer.
+        </p>
+        <p>
+          Jeg er typen der ikke kan sidde stille, og har derfor altid et nyt
+          projekt på bedding, både på, og efter arbejde. Jeg elsker specielt at
+          arbejde med mine hænder med bl.a. at reparere og modificere
+          racercykler, passe på mine agurker i drivhuset, eller at hugge brænde
+          til de kolde vinter aftenener.
+        </p>
+      </div>
+    </article>
+    <Image
+      src={LasseAndWifeImg}
+      alt="Lasse og hans kone smiler til hinanden"
+      quality={80}
+      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover shadow sm:col-span-2"
+    />
+  </ColumnLayout>
+  <section class="flex flex-col items-center justify-evenly gap-2 sm:flex-row">
+    <div class="grid w-60 grid-cols-3 gap-4">
+      <HouseSvg class="col-span-1 fill-slate-700" />
+      <div class="col-span-2 flex flex-col justify-center">
+        <p class="text-3xl font-bold">500+</p>
+        <p class="text-base">familier</p>
+      </div>
+    </div>
+    <div class="grid w-60 grid-cols-3 gap-4">
+      <BriefcaseSvg class="col-span-1 fill-slate-700" />
+      <div class="col-span-2 flex flex-col justify-center">
+        <p class="text-3xl font-bold">
+          22 <span class="text-sm font-normal">års</span>
+        </p>
+        <p class="text-base">erfaring</p>
+      </div>
+    </div>
+    <div class="grid w-60 grid-cols-3 gap-4">
+      <GradutionSvg class="col-span-1 fill-slate-700" />
+      <div class="col-span-2 flex flex-col justify-center">
+        <p class="text-3xl font-bold">
+          17 <span class="text-sm font-normal">års</span>
+        </p>
+        <p class="text-base">specialisering</p>
+      </div>
+    </div>
+  </section>
+  <ColumnLayout>
+    <Image
+      src={BooksImg}
+      alt="Stablede bøger"
+      quality={80}
+      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-left shadow sm:col-span-2"
+    />
+    <div class="grid gap-8 sm:col-span-4 sm:gap-16">
+      <article class="grid gap-4">
+        <Heading2>Kvalifikationer</Heading2>
+        <div>
+          <p>Udover pædagog uddannelsen, er jeg efteruddannet i:</p>
+          <ul class="ml-8 list-disc">
+            <li>Systemisk familiebehandling</li>
+            <li>Kognitiv terapi</li>
+            <li>Mentaliseringsbaseret familiebehandling</li>
+            <li>Teacch (pictogramintegration) autisme pædagogik</li>
+            <li>ADHD Forældrekursus (KIK - Kærlighed i kaos)</li>
+          </ul>
+          <p class="mt-4">
+            Derudover har jeg udarbejdet en række kurser for den offentlige
+            sektor.
+          </p>
+        </div>
+      </article>
+      <article class="grid gap-4">
+        <Heading2>Værdier</Heading2>
+        <p>
+          Som rådgiver er mine værdier og tilgang dybt forankret i empati,
+          respekt og individuel tilpasning. Jeg tror på, at hver familie er
+          unik, og jeg tilpasser min støtte til at imødekomme deres specifikke
+          behov og udfordringer. Min tilgang er baseret på en dyb forståelse af,
+          hvordan ADHD og autisme kan påvirke både individet og hele familien.
+          Jeg er opsat på at skabe et trygt og tillidsfuldt rum, hvor familier
+          føler sig hørt og forstået.
+        </p>
+        <p>
+          Mit mål er at hjælpe dem med at opdage deres styrker og ressourcer, så
+          de kan trives og skabe en mere harmonisk familieliv. Jeg er
+          passioneret omkring at gøre en positiv forskel i familiers liv og
+          arbejder ihærdigt for at levere professionel støtte, der er varig og
+          meningsfuld.
+        </p>
+      </article>
+    </div>
+  </ColumnLayout>
+</PageLayout>

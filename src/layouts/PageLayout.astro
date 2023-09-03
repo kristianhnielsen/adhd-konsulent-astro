@@ -1,0 +1,43 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Fonts from "../components/head/Fonts.astro";
+import Footer from "../components/navigation/Footer.astro";
+import NavigationBar from "../components/navigation/NavigationBar.astro";
+import Analytics from "../components/head/Analytics.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html
+  lang="da"
+  class="scroll-p-24 scroll-smooth bg-neutral-100 font-poppins text-slate-700 outline-slate-700"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <Fonts />
+    <!-- <Analytics/> -->
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <NavigationBar />
+    <main
+      id="main-content"
+      class="mx-8 my-16 grid max-w-screen-xl gap-16 leading-6 xl:mx-auto"
+      transition:animate="slide"
+    >
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

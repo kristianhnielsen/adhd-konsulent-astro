@@ -1,0 +1,194 @@
+---
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import Heading2 from "../components/Heading2.astro";
+import Heading1 from "../components/Heading1.astro";
+import Button from "../components/Button.astro";
+import PriceCard from "../components/PriceCard.astro";
+import ProcessStep from "../components/ProcessStep.astro";
+import Testimonial from "../components/Testimonial.astro";
+
+// Images
+import FamilyHands from "../assets/images/family-hands.jpg";
+import MotherDaughterForest from "../assets/images/mother-daughter-forest.jpg";
+import ConversationSvg from "../assets/icons/ConversationSvg.astro";
+import TaskListSvg from "../assets/icons/TaskListSvg.astro";
+import StrategySvg from "../assets/icons/StrategySvg.astro";
+import RecycleSvg from "../assets/icons/RecycleSvg.astro";
+---
+
+<PageLayout title="Rådgivning | ADHD Og Autisme Konsulent" description="">
+  <ColumnLayout>
+    <article
+      class="flex max-w-prose flex-col gap-8 sm:col-span-4"
+      aria-label="rådgivning"
+    >
+      <Heading1>Rådgivning</Heading1>
+      <div class="grid gap-4">
+        <p>
+          Rådgivning dækker forskellige typer af indsatser, der har til formål
+          at få hverdagen til at fungere i familien. Forløbet tilrettelægges i
+          samarbejde med familien ud fra et helhedssyn, og strækker sig som
+          regel over en længere periode. Et familiebehandlingsforløb kan foregå
+          på mange måder alt efter din families behov og de udfordringer,
+          forløbet skal imødekomme.
+        </p>
+        <p>
+          Familiebehandling er målrettet familier, der har behov for en
+          længerevarende indsats for at kunne løse konkrete problematikker
+          omkring et barn eller en ung med varig funktionsnedsættelse.
+        </p>
+      </div>
+    </article>
+    <Image
+      src={FamilyHands}
+      alt="Hænder fra en familie lagt overpå hinanden"
+      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+    />
+  </ColumnLayout>
+  <ColumnLayout>
+    <Image
+      src={MotherDaughterForest}
+      alt="Mor og datter går hånd i hånd i en skov"
+      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+    />
+    <article class="grid gap-8 sm:col-span-4" aria-label="mål">
+      <Heading2>Mål</Heading2>
+      <ul class="grid">
+        Generelle mål med rådgivning er at få lære
+        <div class="flex flex-wrap gap-4">
+          <li
+            class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:-rotate-3 motion-safe:hover:px-6"
+          >
+            Mindske konflikter
+          </li>
+          <li
+            class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:rotate-3 motion-safe:hover:px-6"
+          >
+            Styrke selvtillid og selværd
+          </li>
+          <li
+            class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:-rotate-3 motion-safe:hover:px-6"
+          >
+            Regulere følelser
+          </li>
+          <li
+            class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:rotate-3 motion-safe:hover:px-6"
+          >
+            Adfærd og reaktionsmønstre
+          </li>
+          <li
+            class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:-rotate-3 motion-safe:hover:px-6"
+          >
+            Håndtere konflikter
+          </li>
+        </div>
+      </ul>
+      <p class="font-bold">
+        Jeg tilrettelægger <span class="underline">altid</span> forløbet sammen
+        med jer og jeres familie.
+      </p>
+    </article>
+  </ColumnLayout>
+  <ColumnLayout>
+    <section class="sm:col-span-2" aria-label="forløb">
+      <Heading2>Forløb</Heading2>
+      <div class="flex flex-col items-center gap-4">
+        <ProcessStep
+          arrow
+          title="Opstartssamtale"
+          description="Indledende samtale for at afdække familiens situation og mål"
+        >
+          <ConversationSvg
+            class="w-8 fill-slate-700 group-hover:fill-rose-800"
+            slot="icon"
+          />
+        </ProcessStep>
+        <ProcessStep
+          arrow
+          title="Planudvikling"
+          description="Udvikling af skræddersyet plan til at skabe struktur og balance"
+        >
+          <StrategySvg
+            class="w-8 fill-slate-700 group-hover:fill-rose-800"
+            slot="icon"
+          />
+        </ProcessStep>
+        <ProcessStep
+          arrow
+          title="Implementering"
+          description="Gennemførelse af planen med støtte, værktøjer og træning"
+        >
+          <TaskListSvg
+            class="w-8 fill-slate-700 group-hover:fill-rose-800"
+            slot="icon"
+          />
+        </ProcessStep>
+        <ProcessStep
+          arrow={false}
+          title="Evaluering"
+          description="Periodisk opfølgning og tilpasning af planen efter familiens udvikling og behov"
+        >
+          <RecycleSvg
+            class="w-8 fill-slate-700 group-hover:fill-rose-800"
+            slot="icon"
+          />
+        </ProcessStep>
+      </div>
+    </section>
+    <section
+      class="mx-auto flex h-full flex-col gap-4 sm:col-span-4"
+      aria-label="pris"
+    >
+      <Heading2>Pris</Heading2>
+      <div class="flex items-center justify-between gap-8">
+        <p>Få en gratis afklarende samtale inden du køber!</p>
+        <Button href="" theme="red" size="md">Kontakt</Button>
+      </div>
+      <div class="flex flex-col justify-between gap-8">
+        <PriceCard
+          title="Afklarende Samtale"
+          price="Gratis"
+          buttonTheme="red"
+          description="En uforpligtigende samtale, om hvad jeg kan gøre for din familie"
+        />
+        <PriceCard
+          title="Rådgivning"
+          price={695}
+          description="Standard rådgivning á en time"
+        />
+        <PriceCard
+          title="Start Pakke"
+          price={3500}
+          description="5x rådgivning, velegnet til lettere udfordrede familier"
+        />
+        <PriceCard
+          title="Familie Pakke"
+          price={6000}
+          description="10x rådgivning, anbefalet til svært udfordrede familier"
+        />
+      </div>
+    </section>
+  </ColumnLayout>
+  <section
+    class="mx-auto grid w-full max-w-screen-lg gap-8"
+    aria-label="hvad andre siger"
+  >
+    <Heading2>Hvad andre siger</Heading2>
+    <div class="grid grid-cols-1 gap-8 text-sm sm:grid-cols-3">
+      <Testimonial
+        clientName="Familien T."
+        statement="Vi havde aldrig troet at der fandtes en som Lasse der kunne redde vores familie og ægteskab samtidigt."
+      />
+      <Testimonial
+        clientName="Familien O."
+        statement="Jeg kunne ønske at havde et billede hængende af Lasse, så kunne jeg bare kigge op på ham og forestille mig hvad han ville svare, så kunne vi hurtigt komme videre."
+      />
+      <Testimonial
+        clientName="Familien T."
+        statement="Vi havde aldrig troet at der fandtes en som Lasse der kunne redde vores familie og ægteskab samtidigt."
+      />
+    </div>
+  </section>
+</PageLayout>

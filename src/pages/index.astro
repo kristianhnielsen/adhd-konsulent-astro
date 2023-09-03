@@ -1,0 +1,230 @@
+---
+import { Image } from "astro:assets";
+import PageLayout from "../layouts/PageLayout.astro";
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import Button from "../components/Button.astro";
+import Heading2 from "../components/Heading2.astro";
+import Heading1 from "../components/Heading1.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Testimonial from "../components/Testimonial.astro";
+
+// Images
+import FamilyHandsSvg from "../assets/images/FamilyHandsSvg.astro";
+import HouseSvg from "../assets/icons/HouseSvg.astro";
+import BriefcaseSvg from "../assets/icons/BriefcaseSvg.astro";
+import GradutionSvg from "../assets/icons/GradutionSvg.astro";
+import KoldingKommune from "../assets/icons/crests/Kolding.svg";
+import BillundKommune from "../assets/icons/crests/Billund.svg";
+import FredericiaKommune from "../assets/icons/crests/Fredericia.svg";
+import ColorBricksImg from "../assets/images/color-bricks.jpg";
+import LasseProfileImg from "../assets/images/lasse-profile2.png";
+---
+
+<PageLayout title="ADHD Og Autisme Konsulent" description="">
+  <ColumnLayout aria-label="Hero">
+    <div class="flex flex-col gap-12 sm:col-span-4">
+      <article class="max-w-prose">
+        <Heading1>ADHD og autisme konsulent</Heading1>
+        <p class="leading-normal">
+          Som familiebehandler og specialpædagogisk konsulent, med mere end 20
+          års erfaring, hjælper jeg familier med børn med ADHD og autisme at
+          finde struktur i en kaotisk hverdag.
+        </p>
+      </article>
+      <Button href="#kontakt" theme="red" size="lg">
+        Gratis Afklarende Samtale
+      </Button>
+    </div>
+    <FamilyHandsSvg
+      handsFillColor="fill-rose-800"
+      handsStrokeColor="stroke-rose-950"
+      class="w-2/3 max-w-xs self-center justify-self-center sm:col-span-2 sm:w-full"
+    />
+  </ColumnLayout>
+  <ColumnLayout aria-label="Rådgivning">
+    <div class="flex max-w-prose flex-col gap-12 sm:col-span-4">
+      <article class="grid gap-4">
+        <Heading2>Rådgivning</Heading2>
+        <p class="text-sm leading-relaxed">
+          Rådgivning dækker forskellige typer af indsatser, der har til formål
+          at få hverdagen til at fungere i familien. Forløbet tilrettelægges i
+          samarbejde med familien ud fra et helhedssyn, og strækker sig som
+          regel over en længere periode. Et familiebehandlingsforløb kan foregå
+          på mange måder alt efter din families behov og de udfordringer,
+          forløbet skal imødekomme. Familiebehandling er målrettet familier, der
+          har behov for en længerevarende indsats for at kunne løse konkrete
+          problematikker omkring et barn eller en ung med varig
+          funktionsnedsættelse.
+        </p>
+      </article>
+      <Button href="/radgivning" arrow theme="dark" size="md">
+        Om Rådgivning
+      </Button>
+    </div>
+    <Image
+      src={ColorBricksImg}
+      alt="Klodsmajor spil med farvede klodser og en barnehånd som holder en klods"
+      quality={10}
+      class="aspect-[2/3] w-48 self-center justify-self-center rounded-lg object-cover shadow sm:col-span-2"
+    />
+  </ColumnLayout>
+  <ColumnLayout theme="red" aria-label="Om ADHD og autisme">
+    <div
+      class="flex flex-col gap-12 justify-self-center sm:col-span-3"
+      aria-label="Hvad er ADHD"
+    >
+      <article class="grid max-w-sm gap-4">
+        <Heading2 color="light">Hvad er ADHD?</Heading2>
+        <div class="grid gap-4 text-sm">
+          <p>
+            Mennesker med ADHD har primært svært ved at koncentrere sig, skabe
+            overblik og struktur og ved at planlægge og gennemføre aktiviteter.
+          </p>
+          <p>
+            Det kan bl.a. være svært at sidde stille, at vente på tur, at følge
+            de sociale spilleregler, at fuldføre sine opgaver, huske aftaler og
+            styre sine følelser.
+          </p>
+          <p>
+            Disse vanskeligheder kan give personer med ADHD problemer på mange
+            områder i livet; i skolen, under uddannelse, på job, og i forhold
+            til familier, partner og venner. Det kan være svært at få en
+            almindelig dagligdag til at fungere.
+          </p>
+        </div>
+      </article>
+      <Button href="/hvad-er-adhd" theme="light" arrow size="sm">
+        Læs mere om ADHD
+      </Button>
+    </div>
+    <div
+      class="flex flex-col gap-12 justify-self-center sm:col-span-3"
+      aria-label="Hvad er autisme"
+    >
+      <article class="grid max-w-sm gap-4">
+        <Heading2 color="light">Hvad er autisme?</Heading2>
+        <div class="grid gap-4 text-sm">
+          <p>
+            Autisme er en medfødt anderledeshed i hjernens udvikling, der
+            påvirker opfattelsen af omgivelserne og måden, man interagerer med
+            andre på.
+          </p>
+          <p>
+            Autisme er en anderledes måde at sanse, forstå og navigere i verden
+            på, som kan have stor betydning i sociale sammenhænge og i
+            kommunikation med andre mennesker. Nogle autister har ligeledes en
+            anderledes sensorisk profil, hvor hjernen registrerer, bearbejder og
+            forudser sansemæssige indtryk anderledes og ofte hyper- eller
+            hyposensitivt.
+          </p>
+          <p>
+            Autisme kan betragtes som en neurovariation eller neurodiversitet,
+            hvilket betoner, at hjernen hos autistiske personer bearbejder
+            sociale, følelsesmæssige og sansemæssige input på en anden måde end
+            hos den neurotypiske (ikke-autistiske) befolkning.
+          </p>
+        </div>
+      </article>
+      <Button href="/hvad-er-autisme" theme="light" arrow size="sm">
+        Læs mere om autisme
+      </Button>
+    </div>
+  </ColumnLayout>
+  <ColumnLayout aria-label="Om Lasse">
+    <Image
+      src={LasseProfileImg}
+      alt="Lasse profil"
+      quality={10}
+      class="aspect-[2/3] max-w-xs self-center justify-self-center rounded-lg object-cover shadow sm:col-span-2"
+    />
+    <div class="flex flex-col gap-12 sm:col-span-4">
+      <article class="grid max-w-prose gap-4">
+        <Heading2>Om Lasse Nielsen</Heading2>
+        <p class="text-sm leading-relaxed">
+          Mit navn er Lasse, og jeg er en erfaren rådgiver med over 20 års
+          ekspertise inden for støtte til familier, der har familiemedlemmer med
+          ADHD og/eller autisme. Som selvstændig rådgiver er mit mål at skabe en
+          positiv og tryg atmosfære, hvor jeg kan hjælpe jer med at navigere
+          gennem udfordringerne ved disse diagnoser. Sammen vil vi finde
+          skræddersyede løsninger og skabe en stærkere familieenhed. Velkommen
+          til et sted, hvor forståelse og støtte går hånd i hånd.
+        </p>
+      </article>
+      <Button href="/om" arrow theme="dark" size="md">Om Lasse</Button>
+    </div>
+  </ColumnLayout>
+  <section
+    class="flex flex-col items-center justify-evenly gap-4 bg-rose-800 p-8 text-slate-50 sm:flex-row"
+    aria-label="Præstationer"
+  >
+    <div class="grid grid-cols-3 gap-4">
+      <HouseSvg class="col-span-1 h-full fill-slate-50" />
+      <div class="col-span-2 flex flex-col justify-center">
+        <p class="text-3xl font-bold">500+</p>
+        <p class="text-base">familier</p>
+      </div>
+    </div>
+    <div class="grid min-w-fit grid-cols-3 gap-4">
+      <BriefcaseSvg class="col-span-1 h-full fill-slate-50" />
+      <div class="col-span-2 flex flex-col justify-center">
+        <p class="text-3xl font-bold">
+          22 <span class="text-sm font-normal">års</span>
+        </p>
+        <p class="text-base">erfaring</p>
+      </div>
+    </div>
+    <div class="grid min-w-fit grid-cols-3 gap-4">
+      <GradutionSvg class="col-span-1 h-full fill-slate-50" />
+      <div class="col-span-2 flex flex-col justify-center">
+        <p class="text-3xl font-bold">
+          17 <span class="text-sm font-normal">års</span>
+        </p>
+        <p class="text-base">specialisering</p>
+      </div>
+    </div>
+  </section>
+  <section
+    class="mx-auto grid w-full max-w-screen-lg gap-4"
+    aria-label="Samarbejdspartnere"
+  >
+    <Heading2>Mine samarbejdspartnere</Heading2>
+    <div class="flex flex-wrap justify-evenly gap-4">
+      <div class="flex w-40 items-center gap-4">
+        <Image src={KoldingKommune} width={60} height={60} alt="" />
+        <p>Kolding<br />Kommune</p>
+      </div>
+      <div class="flex w-40 items-center gap-4">
+        <Image src={BillundKommune} width={60} height={60} alt="" />
+        <p>Billund<br />Kommune</p>
+      </div>
+      <div class="flex w-40 items-center gap-4">
+        <Image src={FredericiaKommune} width={60} height={60} alt="" />
+        <p>Fredericia<br />Kommune</p>
+      </div>
+    </div>
+  </section>
+  <section
+    id="kontakt"
+    class="mx-auto grid w-full max-w-screen-lg gap-8"
+    aria-label="Hvad andre siger"
+  >
+    <Heading2>Hvad andre siger</Heading2>
+    <div class="grid grid-cols-1 gap-8 text-sm sm:grid-cols-3">
+      <Testimonial
+        clientName="Familien T."
+        statement="Vi havde aldrig troet at der fandtes en som Lasse der kunne redde vores familie og ægteskab samtidigt."
+      />
+      <Testimonial
+        clientName="Familien O."
+        statement="Jeg kunne ønske at havde et billede hængende af Lasse, så kunne jeg bare kigge op på ham og forestille mig hvad han ville svare, så kunne vi hurtigt komme videre."
+      />
+      <Testimonial
+        clientName="Familien T."
+        statement="Vi havde aldrig troet at der fandtes en som Lasse der kunne redde vores familie og ægteskab samtidigt."
+      />
+    </div>
+  </section>
+  <ColumnLayout aria-label="Kontakt">
+    <ContactForm />
+  </ColumnLayout>
+</PageLayout>

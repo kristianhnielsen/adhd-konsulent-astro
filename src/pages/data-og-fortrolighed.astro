@@ -1,0 +1,67 @@
+---
+import Button from "../components/Button.astro";
+import Heading1 from "../components/Heading1.astro";
+import Heading2 from "../components/Heading2.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout
+  title="Persondata Og Fortrolighed | ADHD Og Autisme Konsulent"
+  description=""
+>
+  <Heading1>Persondata og fortrolighed</Heading1>
+  <article class="grid max-w-prose gap-4" aria-label="persondata">
+    <Heading2>Persondata</Heading2>
+    <p>
+      Adhd-konsulent.dk bruger ikke cookies, og indsamler ikke
+      personfølsommeoplysninger om dig på dit besøg.
+    </p>
+    <p>
+      Jeg benytter <a
+        href="https://plausible.io"
+        target="_blank"
+        rel="noopener noreferrer">Plausible Analytics</a
+      >, som ikke bruger cookies og er i overensstemmelse med <a
+        href="https://gdpr.eu/what-is-gdpr/"
+        target="_blank"
+        rel="noopener noreferrer">GDPR</a
+      > og andre relevante persondatapolitikker, indsamler informationer om dit
+      besøg. Jeg indsamler ikke personfølsomme oplysninger, og jeg kan ikke
+      "følge" dig på tværs af andre hjemmesider og enheder.
+    </p>
+    <p>
+      Jeg er, i denne sammenhæng, mindre interresseret i <em>hvem</em> du er,
+      men mere nysgerrig på hvordan du bruger min hjemmeside, og hvad jeg kan
+      gøre for at forbedre brugeroplevelsen og tilgængeligheden mv.
+    </p>
+    <Button
+      href="https://plausible.io/data-policy"
+      target="_blank"
+      rel="noopener noreferrer"
+      theme="dark"
+      size="sm"
+    >
+      Læs mere om Plausible Analytics data politik
+    </Button>
+  </article>
+  <article class="grid max-w-prose gap-4" aria-label="fortrolighed">
+    <Heading2>Fortrolighed</Heading2>
+    <p>
+      Jeg er underlagt samme tavshedspligt, som ansatte i en offentlig
+      institution.
+    </p>
+    <p>
+      Reglerne om tavshedspligt er til, for at sikre, at jeg kun udveksler
+      fortrolige oplysninger om børn og unge og deres familier med uvedkommende.
+    </p>
+    <p>
+      Dette gør sig gældende fra når du opsøger kontakt, uanset medie, såvidt
+      som efter vores sidste møde.
+    </p>
+    <p>
+      De vigtigste regler om tavshedspligt fremgår af straffeloven og
+      forvaltningsloven. Herudover er opbevaring og udveksling af oplysninger
+      også reguleret af GDPR-reglerne.
+    </p>
+  </article>
+</PageLayout>

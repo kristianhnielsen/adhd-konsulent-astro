@@ -1,0 +1,99 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"svg"> {
+  textColor: string;
+  bgColor: string;
+}
+
+const { textColor, bgColor, ...props } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 792 795"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  {...props}
+>
+  <g clip-path="url(#clip0_876_244)">
+    <rect x="468" y="437" width="300" height="300" rx="7" fill={bgColor}></rect>
+    <path
+      d="M608.92 517.4C623.587 517.4 636.454 520.267 647.52 526C658.72 531.733 667.32 539.933 673.32 550.6C679.454 561.133 682.52 573.4 682.52 587.4C682.52 601.4 679.454 613.667 673.32 624.2C667.32 634.6 658.72 642.667 647.52 648.4C636.454 654.133 623.587 657 608.92 657H560.12V517.4H608.92ZM607.92 633.2C622.587 633.2 633.92 629.2 641.92 621.2C649.92 613.2 653.92 601.933 653.92 587.4C653.92 572.867 649.92 561.533 641.92 553.4C633.92 545.133 622.587 541 607.92 541H588.12V633.2H607.92Z"
+      fill={textColor}></path>
+  </g>
+  <rect
+    x="468"
+    y="437"
+    width="300"
+    height="300"
+    rx="7"
+    stroke={bgColor}
+    stroke-width="47"
+    stroke-linejoin="round"></rect>
+  <g clip-path="url(#clip1_876_244)">
+    <rect x="57.832" y="24" width="300" height="300" rx="7" fill={bgColor}
+    ></rect>
+    <path
+      d="M235.65 217.4H180.05L170.85 244H141.45L191.65 104.2H224.25L274.45 244H244.85L235.65 217.4ZM228.05 195L207.85 136.6L187.65 195H228.05Z"
+      fill={textColor}></path>
+  </g>
+  <rect
+    x="57.832"
+    y="24"
+    width="300"
+    height="300"
+    rx="7"
+    stroke={bgColor}
+    stroke-width="47"
+    stroke-linejoin="round"></rect>
+  <rect
+    x="22.4648"
+    y="484.159"
+    width="300"
+    height="300"
+    rx="7"
+    transform="rotate(-16 22.4648 484.159)"
+    fill={bgColor}></rect>
+  <path
+    d="M244.492 504.134L282.971 638.326L256.056 646.043L239.683 588.945L182.199 605.428L198.572 662.527L171.657 670.244L133.178 536.052L160.093 528.334L175.915 583.511L233.398 567.028L217.577 511.851L244.492 504.134Z"
+    fill={textColor}></path>
+  <rect
+    x="22.4648"
+    y="484.159"
+    width="300"
+    height="300"
+    rx="7"
+    transform="rotate(-16 22.4648 484.159)"
+    stroke={bgColor}
+    stroke-width="47"
+    stroke-linejoin="round"></rect>
+  <g clip-path="url(#clip2_876_244)">
+    <rect x="468" y="24" width="300" height="300" rx="7" fill={bgColor}></rect>
+    <path
+      d="M608.92 104.4C623.587 104.4 636.454 107.267 647.52 113C658.72 118.733 667.32 126.933 673.32 137.6C679.454 148.133 682.52 160.4 682.52 174.4C682.52 188.4 679.454 200.667 673.32 211.2C667.32 221.6 658.72 229.667 647.52 235.4C636.454 241.133 623.587 244 608.92 244H560.12V104.4H608.92ZM607.92 220.2C622.587 220.2 633.92 216.2 641.92 208.2C649.92 200.2 653.92 188.933 653.92 174.4C653.92 159.867 649.92 148.533 641.92 140.4C633.92 132.133 622.587 128 607.92 128H588.12V220.2H607.92Z"
+      fill={textColor}></path>
+  </g>
+  <rect
+    x="468"
+    y="24"
+    width="300"
+    height="300"
+    rx="7"
+    stroke={bgColor}
+    stroke-width="47"
+    stroke-linejoin="round"></rect>
+  <defs>
+    <clipPath id="clip0_876_244">
+      <rect x="468" y="437" width="300" height="300" rx="7" fill={textColor}
+      ></rect>
+    </clipPath>
+    <clipPath id="clip1_876_244">
+      <rect x="57.832" y="24" width="300" height="300" rx="7" fill={textColor}
+      ></rect>
+    </clipPath>
+    <clipPath id="clip2_876_244">
+      <rect x="468" y="24" width="300" height="300" rx="7" fill={textColor}
+      ></rect>
+    </clipPath>
+  </defs>
+</svg>

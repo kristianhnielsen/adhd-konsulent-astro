@@ -1,0 +1,150 @@
+---
+import LocationPinSvg from "../../assets/icons/LocationPinSvg.astro";
+import PersonSvg from "../../assets/icons/PersonSvg.astro";
+import PhoneSvg from "../../assets/icons/PhoneSvg.astro";
+import EmailSvg from "../../assets/icons/EmailSvg.astro";
+---
+
+<footer
+  aria-label="Footer"
+  class="grid gap-16 bg-rose-800 px-4 py-16 pb-8 text-slate-50 md:px-16"
+  transition:persist
+>
+  <section
+    class="grid grid-cols-1 justify-between gap-8 sm:grid-cols-3"
+    aria-label="footer virksomheds information"
+  >
+    <article class="flex flex-col gap-4">
+      <h2 class="text-xl font-bold">ADHD Og Autisme Konsulent</h2>
+      <p class="text-sm leading-6">
+        Med mere end 20 års erfaring som familiebehandler og specialpædagogisk
+        konsulent, assisterer jeg familier med børn, der har ADHD og autisme,
+        med at etablere struktur i deres udfordrende hverdag.
+      </p>
+    </article>
+    <section class="grid gap-4" aria-label="footer navigation">
+      <h2 class="font-bold">Navigation</h2>
+      <nav aria-labelledby="footer-navigation">
+        <ul class="grid gap-4">
+          <li>
+            <a
+              href="/radgivning"
+              class="border-slate-50 outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+              >Rådgivning</a
+            >
+          </li>
+          <li>
+            <a
+              href="/om"
+              class="border-slate-50 outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+              >Om Lasse</a
+            >
+          </li>
+          <li>
+            <a
+              href="/kontakt"
+              class="border-slate-50 outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+              >Kontakt</a
+            >
+          </li>
+          <li>
+            <a
+              href="/hvad-er-adhd"
+              class="border-slate-50 outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+              >Hvad er ADHD?</a
+            >
+          </li>
+          <li>
+            <a
+              href="/hvad-er-autisme"
+              class="border-slate-50 outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+              >Hvad er autisme?</a
+            >
+          </li>
+          <hr class="my-4 bg-slate-50" />
+          <li>
+            <a
+              href="/accessibility"
+              class="break-all border-slate-50 font-extralight outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+              >Tilgængelighedserklæring</a
+            >
+          </li>
+          <li>
+            <a
+              href="/data-og-fortrolighed"
+              class="border-slate-50 font-extralight outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+              >Politik om beskyttelse af personlige oplysninger</a
+            >
+          </li>
+          <li>
+            <a
+              href="/sitemap-index.xml"
+              rel="sitemap"
+              class="border-slate-50 font-extralight outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+              >Sitemap</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <address
+      class="flex flex-col gap-4 not-italic"
+      aria-label="kontakt information"
+    >
+      <h2 class="text-base font-bold">Kontakt</h2>
+      <div class="flex items-center gap-4">
+        <PersonSvg class="w-10 fill-slate-50" />
+        <p
+          class="outline-slate-50 transition-all focus-visible:outline-offset-4"
+        >
+          Lasse Nielsen
+        </p>
+      </div>
+      <div class="flex items-center gap-4">
+        <LocationPinSvg class="w-10 fill-slate-50" />
+        <a
+          href="https://goo.gl/maps/uLkDGnW7TTNKPpz77"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-slate-50 outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+          title="Se på Google Maps">Bramdrupvej 94, 6040 Egtved</a
+        >
+      </div>
+      <div class="flex items-center gap-4">
+        <EmailSvg class="w-10 fill-slate-50" />
+        <a
+          href="mailto:donsen.lassen@hotmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="break-all border-slate-50 outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+          >donsen.lassen@hotmail.com</a
+        >
+      </div>
+      <div class="flex items-center gap-4">
+        <PhoneSvg class="w-10 fill-slate-50" />
+        <a
+          href="tel:+4540613102"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-slate-50 outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+        >
+          +45 40 61 31 02
+        </a>
+      </div>
+    </address>
+  </section>
+  <section
+    class="flex flex-col justify-between gap-4 font-extralight sm:flex-row"
+  >
+    <p>&copy; ADHD Og Autisme Konsulent 2023</p>
+    <p>
+      Designed and developed by <a
+        href="https://kristiannielsen.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="border-slate-50 font-normal outline-slate-50 transition-all hover:border-b-2 focus-visible:outline-offset-4"
+        >Kristian Nielsen Web Development</a
+      >
+    </p>
+  </section>
+</footer>

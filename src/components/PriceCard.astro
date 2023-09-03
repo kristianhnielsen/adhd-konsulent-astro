@@ -1,0 +1,45 @@
+---
+import Button from "./Button.astro";
+
+interface Props {
+  title: string;
+  price: number | "Gratis";
+  buttonTheme?: "dark" | "red" | "light";
+  description: string;
+}
+
+const {
+  title,
+  price,
+  buttonTheme = "dark",
+  description,
+} = Astro.props as Props;
+
+const currencyFormatter = new Intl.NumberFormat("da-DK", {
+  style: "currency",
+  currency: "DKK",
+  maximumSignificantDigits: 3,
+});
+---
+
+<div
+  class="group flex flex-col rounded-lg bg-slate-50 p-4 shadow-md transition-shadow hover:gap-4 hover:shadow-xl motion-reduce:gap-4"
+  aria-label={title.toLowerCase()}
+>
+  <div
+    class="grid grid-cols-3 items-center justify-items-end gap-4 text-center"
+  >
+    <h3 class="justify-self-start font-bold">{title}</h3>
+    <p class="justify-self-center">
+      {price === "Gratis" ? price : currencyFormatter.format(price)}
+    </p>
+    <Button href="/kontakt" arrow theme={buttonTheme} size="md">Bestil</Button>
+  </div>
+  <div
+    class="grid grid-rows-[1fr] transition-all group-hover:grid-rows-[1fr] motion-safe:sm:grid-rows-[0fr]"
+  >
+    <div class="justify-items-center overflow-hidden">
+      <p class="text-sm">{description}</p>
+    </div>
+  </div>
+</div>

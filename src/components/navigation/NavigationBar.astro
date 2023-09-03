@@ -1,0 +1,103 @@
+---
+import NavLink from "./NavLink.astro";
+import SkipToContent from "./SkipToContent.astro";
+
+// TODO
+// Hamburger button has state issues when going from desktop to mobile size due to md:hidden (going from display: none to something)
+---
+
+<header
+  class="sticky left-0 top-0 z-50 flex w-full items-center justify-between bg-neutral-100 px-4 py-4 shadow-lg"
+  aria-label="navigation-bar"
+  transition:persist
+>
+  <SkipToContent />
+  <a
+    href="/"
+    aria-label="site name"
+    class="text-sm font-bold leading-none outline-slate-700 transition-all hover:border-b-4 hover:border-rose-800 focus-visible:outline-offset-4 motion-safe:active:outline-offset-0"
+    >ADHD Og Autisme Konsulent</a
+  >
+  <nav
+    data-visible="false"
+    aria-expanded="false"
+    aria-label="navigation"
+    class="absolute left-0 top-0 flex text-lg font-semibold text-slate-700 duration-300 ease-out data-[visible='false']:-translate-y-full md:static md:text-sm"
+  >
+    <ul
+      class="flex w-screen flex-col items-end gap-4 border-b-4 border-rose-800 bg-neutral-100 pb-4 pr-4 pt-16 shadow-lg md:w-auto md:flex-row md:items-center md:border-none md:p-0 md:shadow-none"
+    >
+      <li>
+        <NavLink href="/radgivning">Rådgivning</NavLink>
+      </li>
+      <li><NavLink href="/om">Om Lasse</NavLink></li>
+      <li>
+        <NavLink href="/kontakt">Kontakt</NavLink>
+      </li>
+    </ul>
+  </nav>
+  <button
+    id="hamburger"
+    aria-label="hamburger menu"
+    class="group z-40 flex aspect-square w-8 cursor-pointer flex-col justify-center md:hidden"
+  >
+    <bar
+      class="mb-1 h-1 w-full rounded-full bg-slate-700 transition-all duration-300 ease-in-out group-aria-expanded:translate-y-2 group-aria-expanded:-rotate-45 group-aria-expanded:bg-rose-800"
+    ></bar>
+    <bar
+      class="h-1 w-full rounded-full bg-slate-700 transition-all duration-300 ease-in-out group-aria-expanded:scale-0"
+    ></bar>
+    <bar
+      class="mt-1 h-1 w-full rounded-full bg-slate-700 transition-all duration-300 ease-in-out group-aria-expanded:-translate-y-2 group-aria-expanded:rotate-45 group-aria-expanded:bg-rose-800"
+    ></bar>
+  </button>
+</header>
+
+<script>
+  const hamburgerButton = document.querySelector("#hamburger");
+  const navigation = document.querySelector("nav");
+  const navLinks = document.querySelectorAll("nav > ul > li > a");
+  const md = 768;
+
+  function hide() {
+    navigation?.setAttribute("data-visible", "false");
+    hamburgerButton?.setAttribute("aria-expanded", "false");
+  }
+
+  function show() {
+    navigation?.setAttribute("data-visible", "true");
+    hamburgerButton?.setAttribute("aria-expanded", "true");
+  }
+
+  // if not mobile view, then show data-visible as true
+  // this is purely for aethstetics, it has no effects on JS or CSS otherwise
+  if (window.innerWidth > md) {
+    show();
+  }
+
+  document.addEventListener("astro:after-swap", () => {
+    if (window.innerWidth > md) {
+      show();
+    }
+  });
+
+  // All navigation links in hamburger menu closes the menu when clicked
+  navLinks.forEach((link) =>
+    link.addEventListener("click", () => {
+      if (window.innerWidth < md) {
+        hide();
+      }
+    }),
+  );
+
+  // Hamburger menu button - open/close toggle
+  hamburgerButton?.addEventListener("click", () => {
+    const visibility = navigation?.getAttribute("data-visible");
+
+    if (visibility === "false") {
+      show();
+    } else if (visibility === "true") {
+      hide();
+    }
+  });
+</script>

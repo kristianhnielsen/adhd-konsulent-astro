@@ -1,0 +1,136 @@
+---
+import { Image } from "astro:assets";
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import Button from "../components/Button.astro";
+import Heading2 from "../components/Heading2.astro";
+import Heading1 from "../components/Heading1.astro";
+
+// Images
+import ChildLegoImg from "../assets/images/child-lego.jpg";
+import LetterCubesImg from "../assets/images/letter-cubes.jpg";
+import ChildHeartImg from "../assets/images/child-heart.jpg";
+---
+
+<PageLayout title="Hvad Er Autisme? | ADHD Og Autisme Konsulent" description="">
+  <ColumnLayout>
+    <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
+      <Heading1>Hvad er autisme?</Heading1>
+      <div class="grid gap-4">
+        <p>
+          Autisme er en medfødt variation i hjernens udvikling, der påvirker
+          opfattelsen af omgivelserne og måden, man interagerer med andre på.
+        </p>
+        <p>
+          I Danmark stilles diagnosen ud fra de kliniske diagnosekriterier
+          beskrevet i <a
+            href="https://www.who.int/standards/classifications/classification-of-diseases"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-rose-800 hover:underline"
+            >WHOs internationale klassifikationssystem</a
+          >. Autisme kategoriseres som "gennemgribende", hvilket betyder, at det
+          påvirker alt, hvad den autistiske person siger, tænker og gør.
+        </p>
+        <p>
+          Autisme indebærer en anderledes måde at sanse, forstå og navigere i
+          verden, hvilket kan have stor betydning i sociale sammenhænge og i
+          kommunikation med andre mennesker.
+        </p>
+        <p>
+          Nogle autister har desuden en anderledes sensorisk profil, hvor
+          hjernen registrerer, bearbejder og forudser sansemæssige indtryk på en
+          anden måde, ofte med hyper- eller hyposensitivitet.
+        </p>
+        <p>
+          Autisme kan ses som en form for neurovariation eller neurodiversitet,
+          hvilket betyder, at hjernen hos autistiske personer bearbejder
+          sociale, følelsesmæssige og sansemæssige input anderledes end hos den
+          neurotypiske (ikke-autistiske) befolkning.
+        </p>
+      </div>
+    </article>
+    <Image
+      src={ChildLegoImg}
+      alt="Barn som leger med Lego"
+      quality={90}
+      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+    />
+  </ColumnLayout>
+  <ColumnLayout>
+    <Image
+      src={LetterCubesImg}
+      alt="Træklodser med farvede bogstaver stablet oven på hinanden"
+      quality={90}
+      class="aspect-[2/3] self-center justify-self-center rounded-lg object-left shadow sm:col-span-2"
+    />
+    <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
+      <Heading2>Hvad er årsagen til autisme?</Heading2>
+      <div class="grid gap-4">
+        <p>
+          Autisme har en biologisk, medfødt og arvelig karakter. Den præcise
+          årsag til autisme er vanskelig at identificere på grund af det
+          komplekse samspil mellem flere hundrede gener, der er forbundet med
+          hjernens udvikling. Dette komplekse samspil er årsagen til autisme, og
+          derfor er der ikke specifikke biomarkører, der kan indikere autisme.
+        </p>
+        <p>
+          Der er ikke blot ét enkelt "autisme-gen", og det er vigtigt at forstå,
+          at tilstedeværelsen af flere gener forbundet med autisme ikke
+          nødvendigvis betyder, at en person har autisme. Nogle genmutationer er
+          associeret med autisme, men specifikke gener kan kun "aktiveres" i
+          mødet med særlige omgivelser eller miljøer, hvilket gør det vanskeligt
+          at finde præcise årsagsforklaringer for autisme.
+        </p>
+        <p>
+          Der er indikationer på, at visse tilfælde af autisme kan opstå som
+          følge af miljøpåvirkninger under fosterets udvikling. Men dette sker
+          kun, hvis individet allerede bærer såkaldte påvirkelige risikogener
+          forbundet med autisme.
+        </p>
+        <p>
+          Både arv og miljø spiller således en rolle i udviklingen af autisme,
+          og hverken arvelig disponering eller miljøpåvirkning kan alene
+          resultere i autisme. Det er den komplekse interaktion mellem gener og
+          miljøfaktorer, der bidrager til udviklingen af denne tilstand.
+        </p>
+      </div>
+    </article>
+  </ColumnLayout>
+  <ColumnLayout>
+    <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
+      <Heading2>Kan man leve et godt liv med autisme?</Heading2>
+      <div class="grid gap-4">
+        <p class="underline">Absolut!</p>
+        <p>
+          Mange med autisme fører gode og værdifulde liv - autistiske liv er
+          fuldt ud meningsfulde! Udfordringer og mistrivsel opstår ofte hos
+          mennesker med autisme, primært fordi de ofte bliver misforstået eller
+          lever i miljøer, der ikke er tilpasset deres behov. Men med den rette
+          støtte og forståelse trives autister ofte i høj grad og lever
+          spændende og begivenhedsrige liv.
+        </p>
+        <p>
+          Autistiske individer har også en unik opfattelse og oplevelse af
+          nydelse, og de kan have berigende sanseoplevelser og intense
+          særinteresser, der bringer stor følelsesmæssig glæde - noget som ofte
+          går forbi de neurotypiske mennesker.
+        </p>
+      </div>
+    </article>
+    <Image
+      src={ChildHeartImg}
+      alt="Barn med hænderne på et rødt hjerte"
+      quality={90}
+      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+    />
+  </ColumnLayout>
+  <section class="flex flex-col items-center gap-4">
+    <p class="text-lg">Lær mere om autisme på autismeforeningens hjemmeside.</p>
+    <Button href="" theme="red" arrow size="md">
+      Besøg autismeforeningen.dk
+    </Button>
+    <p>eller</p>
+    <Button href="" theme="dark" arrow size="md">Kontakt Lasse</Button>
+  </section>
+</PageLayout>

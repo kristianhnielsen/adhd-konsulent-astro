@@ -1,0 +1,11 @@
+---
+import type { HTMLAttributes } from "astro/types";
+const { ...props } = Astro.props as HTMLAttributes<"a">;
+---
+
+<a
+  class="p-1 outline-slate-700 transition-all hover:border-b-4 hover:border-rose-800 focus-visible:outline-offset-2 motion-safe:active:outline-offset-0"
+  {...props}
+>
+  <slot />
+</a>

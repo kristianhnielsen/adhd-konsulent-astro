@@ -1,0 +1,48 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+interface Props extends HTMLAttributes<"a"> {
+  theme: "red" | "dark" | "light";
+  size: "sm" | "md" | "lg";
+  arrow?: boolean;
+}
+
+const { theme, arrow, size, class: className, ...props } = Astro.props as Props;
+---
+
+<a
+  class={twMerge(
+    `flex group w-fit cursor-pointer rounded transition-all focus-visible:outline-offset-4 outline-slate-700 items-center`,
+    arrow &&
+      `flex-row items-center gap-4 motion-safe:hover:gap-6 motion-safe:hover:pr-2`,
+    size === "sm" && "px-4 py-2 text-xs font-semibold",
+    size === "md" && "px-4 py-2 text-sm font-bold sm:text-base",
+    size === "lg" && "px-8 py-4 text-sm font-bold sm:text-base",
+    theme === "red" && "bg-rose-800 text-slate-50 hover:bg-rose-900",
+    theme === "dark" && "border-2 border-slate-700 text-slate-700",
+    theme === "dark" && !arrow && "hover:bg-slate-700 hover:text-slate-50",
+    theme === "light" && "border-2 border-slate-50 text-slate-50",
+    className,
+  )}
+  {...props}
+>
+  <slot />
+  {
+    arrow && (
+      <svg
+        width="21"
+        height="18"
+        viewBox="0 0 21 18"
+        class={twMerge(
+          theme === "dark" && "fill-slate-700",
+          theme === "light" && "fill-slate-50",
+          theme === "red" && "fill-slate-50",
+        )}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M2 10.25H16.825L12.2875 15.7C12.1824 15.8264 12.1033 15.9723 12.0546 16.1292C12.0059 16.2862 11.9886 16.4512 12.0037 16.6149C12.0342 16.9454 12.1947 17.2503 12.45 17.4625C12.7053 17.6747 13.0344 17.7768 13.3649 17.7463C13.6954 17.7158 14.0003 17.5553 14.2125 17.3L20.4625 9.8C20.5045 9.74035 20.5422 9.67768 20.575 9.6125C20.575 9.55 20.6375 9.5125 20.6625 9.45C20.7192 9.30668 20.7488 9.15411 20.75 9C20.7488 8.84589 20.7192 8.69333 20.6625 8.55C20.6625 8.4875 20.6 8.45 20.575 8.3875C20.5422 8.32233 20.5045 8.25966 20.4625 8.2L14.2125 0.700003C14.095 0.558899 13.9478 0.445424 13.7814 0.367648C13.6151 0.289871 13.4336 0.249704 13.25 0.260002C12.9579 0.249432 12.6749 0.351151 12.45 0.537502C12.3234 0.642439 12.2188 0.771314 12.1421 0.916748C12.0654 1.06218 12.0182 1.22132 12.0031 1.38504C11.988 1.54876 12.0053 1.71385 12.0541 1.87085C12.1029 2.02786 12.1822 2.17369 12.2875 2.3L16.825 7.75H2C1.66848 7.75 1.35054 7.8817 1.11612 8.11612C0.881696 8.35054 0.75 8.66848 0.75 9C0.75 9.33152 0.881696 9.64947 1.11612 9.88389C1.35054 10.1183 1.66848 10.25 2 10.25Z" />
+      </svg>
+    )
+  }
+</a>
