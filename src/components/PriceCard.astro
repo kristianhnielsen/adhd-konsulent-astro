@@ -23,13 +23,13 @@ const currencyFormatter = new Intl.NumberFormat("da-DK", {
 ---
 
 <div
-  class="group flex flex-col rounded-lg bg-slate-50 p-4 shadow-md transition-shadow hover:gap-4 hover:shadow-xl motion-reduce:gap-4"
+  class="group flex flex-col gap-4 rounded-lg bg-slate-50 p-4 shadow-md transition-shadow hover:gap-4 hover:shadow-xl motion-reduce:gap-4 md:gap-0"
   aria-label={title.toLowerCase()}
 >
   <div
     class="grid grid-cols-3 items-center justify-items-end gap-4 text-center"
   >
-    <h3 class="justify-self-start font-bold">{title}</h3>
+    <h3 class="justify-self-start text-left font-bold leading-none">{title}</h3>
     <p class="justify-self-center">
       {price === "Gratis" ? price : currencyFormatter.format(price)}
     </p>
