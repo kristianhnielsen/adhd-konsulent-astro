@@ -54,7 +54,7 @@ import ChildHeartImg from "../assets/images/child-heart.jpg";
       src={ChildLegoImg}
       alt="Barn som leger med Lego"
       quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
     />
   </ColumnLayout>
   <ColumnLayout>
@@ -62,7 +62,7 @@ import ChildHeartImg from "../assets/images/child-heart.jpg";
       src={LetterCubesImg}
       alt="Træklodser med farvede bogstaver stablet oven på hinanden"
       quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg object-left shadow sm:col-span-2"
+      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-left shadow sm:col-span-2"
     />
     <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
       <Heading2>Hvad er årsagen til autisme?</Heading2>
@@ -122,15 +122,22 @@ import ChildHeartImg from "../assets/images/child-heart.jpg";
       src={ChildHeartImg}
       alt="Barn med hænderne på et rødt hjerte"
       quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
     />
   </ColumnLayout>
   <section class="flex flex-col items-center gap-4">
     <p class="text-lg">Lær mere om autisme på autismeforeningens hjemmeside.</p>
-    <Button href="" theme="red" arrow size="md">
+    <Button
+      href="https://www.autismeforeningen.dk/"
+      target="_blank"
+      rel="noopener noreferrer"
+      theme="red"
+      arrow
+      size="md"
+    >
       Besøg autismeforeningen.dk
     </Button>
     <p>eller</p>
-    <Button href="" theme="dark" arrow size="md">Kontakt Lasse</Button>
+    <Button href="/kontakt" theme="dark" arrow size="md">Kontakt Lasse</Button>
   </section>
 </PageLayout>

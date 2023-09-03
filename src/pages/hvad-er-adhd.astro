@@ -44,7 +44,7 @@ import PillowFight from "../assets/images/pillow-fight.jpg";
       src={PillowFight}
       alt="To børn har pudekamp på en seng"
       quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
     />
   </ColumnLayout>
   <ColumnLayout>
@@ -52,7 +52,7 @@ import PillowFight from "../assets/images/pillow-fight.jpg";
       src={GirlSpeedWalking}
       alt="Gående fartsløret pige foran grønt hus"
       quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
     />
     <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
       <Heading2>Hvad skyldes symptomerne?</Heading2>
@@ -90,15 +90,24 @@ import PillowFight from "../assets/images/pillow-fight.jpg";
       src={ChildOnPillar}
       alt="Pige som læser i en bog mens hun sidder på en høj sten"
       quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
+      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
     />
   </ColumnLayout>
   <section class="flex flex-col items-center gap-4">
     <p class="text-lg">
       Lær mere om ADHD / ADD på ADHD-foreningens hjemmeside.
     </p>
-    <Button href="" theme="red" arrow size="md">Besøg ADHD.dk</Button>
+    <Button
+      href="https://adhd.dk/"
+      target="_blank"
+      rel="noopener noreferrer"
+      theme="red"
+      arrow
+      size="md"
+    >
+      Besøg ADHD.dk
+    </Button>
     <p>eller</p>
-    <Button href="" theme="dark" arrow size="md">Kontakt Lasse</Button>
+    <Button href="/kontakt" theme="dark" arrow size="md">Kontakt Lasse</Button>
   </section>
 </PageLayout>
