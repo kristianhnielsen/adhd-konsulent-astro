@@ -56,38 +56,34 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
     <article class="grid gap-8 sm:col-span-4" aria-label="mål">
       <Heading2>Mål</Heading2>
       <ul class="grid">
-        Generelle mål med rådgivning er at få lære
+        Generelle mål med rådgivning er at etablere en hverdag der er
+        kendetegnet ved:
         <div class="flex flex-wrap gap-4">
           <li
             class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:-rotate-3 motion-safe:hover:px-6"
           >
-            Mindske konflikter
+            Færre konflikter
           </li>
           <li
             class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:rotate-3 motion-safe:hover:px-6"
           >
-            Styrke selvtillid og selværd
-          </li>
-          <li
-            class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:-rotate-3 motion-safe:hover:px-6"
-          >
-            Regulere følelser
+            Øge barnets selvtillid og selværd
           </li>
           <li
             class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:rotate-3 motion-safe:hover:px-6"
           >
-            Adfærd og reaktionsmønstre
+            At have konkrete værktøjer
           </li>
           <li
-            class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:-rotate-3 motion-safe:hover:px-6"
+            class="self-center rounded-lg bg-slate-50 px-4 py-2 shadow-md transition-all hover:rotate-0 hover:shadow-lg motion-safe:rotate-3 motion-safe:hover:px-6"
           >
-            Håndtere konflikter
+            Større viden og indsigt i ADHD og autisme
           </li>
         </div>
       </ul>
       <p class="font-bold">
-        Jeg tilrettelægger <span class="underline">altid</span> forløbet sammen
-        med jer og jeres familie.
+        Det er vigtig at vi sammen tilrettelægger jeres forløb sådan at det
+        passer til jeres familie.
       </p>
     </article>
   </ColumnLayout>
@@ -98,7 +94,7 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
         <ProcessStep
           arrow
           title="Opstartssamtale"
-          description="Indledende samtale for at afdække familiens situation og mål"
+          description="Indledende samtale for at afdække jeres families situation og mål"
         >
           <ConversationSvg
             class="w-8 fill-slate-700 group-hover:fill-rose-800"
@@ -107,8 +103,8 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
         </ProcessStep>
         <ProcessStep
           arrow
-          title="Planudvikling"
-          description="Udvikling af skræddersyet plan til at skabe struktur og balance"
+          title="Skræddersyet forløb"
+          description="Vi arbejder sammen om at etablere struktur og balance"
         >
           <StrategySvg
             class="w-8 fill-slate-700 group-hover:fill-rose-800"
@@ -128,7 +124,7 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
         <ProcessStep
           arrow={false}
           title="Evaluering"
-          description="Periodisk opfølgning og tilpasning af planen efter familiens udvikling og behov"
+          description="Periodisk opfølgning og tilpasning af planen efter jeres families udvikling og behov"
         >
           <RecycleSvg
             class="w-8 fill-slate-700 group-hover:fill-rose-800"
@@ -143,7 +139,7 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
     >
       <Heading2>Pris</Heading2>
       <div class="flex items-center justify-between gap-8">
-        <p>Få en gratis afklarende samtale inden du køber!</p>
+        <p>Få en gratis afklarende samtale!</p>
         <Button href="/kontakt" theme="red" size="md">Kontakt</Button>
       </div>
       <div class="flex flex-col justify-between gap-8">
@@ -164,9 +160,14 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
           description="5x rådgivning, velegnet til lettere udfordrede familier"
         />
         <PriceCard
-          title="Familie Pakke"
+          title="Udvidet Pakke"
           price={6000}
           description="10x rådgivning, anbefalet til svært udfordrede familier"
+        />
+        <PriceCard
+          title="Forældre Kursus"
+          price={10000}
+          description="12 moduler med udgangspunkt i Kærlighed i Kaos, som er et evidensbaseret forældretræningskursus."
         />
       </div>
     </section>
@@ -186,8 +187,12 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
         statement="Jeg kunne ønske at havde et billede hængende af Lasse, så kunne jeg bare kigge op på ham og forestille mig hvad han ville svare, så kunne vi hurtigt komme videre."
       />
       <Testimonial
-        clientName="Familien T."
-        statement="Vi havde aldrig troet at der fandtes en som Lasse der kunne redde vores familie og ægteskab samtidigt."
+        clientName="Familien K."
+        statement="Det var godt, at blive bekræftet i, at vi ikke er forkerte eller dårlige forældre, men at vi bare havde brug for lidt støtte til at få en god hverdag."
+      />
+      <Testimonial
+        clientName="Familien J."
+        statement="Vi har virkelig fået en kvalificeret støtte og ny viden om at være forældre til et barn med ADHD og autisme. Udover dette, havde Lasse også et stort fokus på at søskende også skulle ses og høres."
       />
     </div>
   </section>

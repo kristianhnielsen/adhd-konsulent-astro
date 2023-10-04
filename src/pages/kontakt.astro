@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import ColumnLayout from "../layouts/ColumnLayout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
-import ContactForm from "../components/ContactForm.astro";
 import Heading2 from "../components/Heading2.astro";
 import Heading1 from "../components/Heading1.astro";
 import Button from "../components/Button.astro";
@@ -23,8 +22,9 @@ import BoyOnShouldersImg from "../assets/images/boy-on-shoulders.jpg";
       <p>
         Din vej mod forandring starter her. Udfyld formularen og jeg vil
         kontakte dig snarest muligt, så vi sammen kan tage de første skridt mod
-        en bedre hverdag med ADHD/ADD og autisme. Jeg ser frem til at være en
-        del af jeres rejse mod et mere balanceret familieliv.
+        et samarbejde og støtte i forhold til at være en familie med ADHD/ADD og
+        autisme. Jeg ser frem til at være en del af jeres rejse mod et mere
+        balanceret familieliv.
       </p>
       <div class="flex flex-col gap-4 sm:flex-row">
         <Button size="md" theme="red" href="#kontakt-formular">
@@ -41,9 +41,6 @@ import BoyOnShouldersImg from "../assets/images/boy-on-shoulders.jpg";
       quality={80}
       class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-left shadow sm:col-span-2"
     />
-  </ColumnLayout>
-  <ColumnLayout>
-    <ContactForm id="kontakt-formular" />
   </ColumnLayout>
   <ColumnLayout>
     <address

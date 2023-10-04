@@ -5,7 +5,6 @@ import ColumnLayout from "../layouts/ColumnLayout.astro";
 import Button from "../components/Button.astro";
 import Heading2 from "../components/Heading2.astro";
 import Heading1 from "../components/Heading1.astro";
-import ContactForm from "../components/ContactForm.astro";
 import Testimonial from "../components/Testimonial.astro";
 
 // Images
@@ -45,17 +44,19 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
     <div class="flex max-w-prose flex-col gap-12 sm:col-span-4">
       <article class="grid gap-4">
         <Heading2>Rådgivning</Heading2>
-        <p class="text-sm leading-relaxed">
-          Rådgivning dækker forskellige typer af indsatser, der har til formål
-          at få hverdagen til at fungere i familien. Forløbet tilrettelægges i
-          samarbejde med familien ud fra et helhedssyn, og strækker sig som
-          regel over en længere periode. Et familiebehandlingsforløb kan foregå
-          på mange måder alt efter din families behov og de udfordringer,
-          forløbet skal imødekomme. Familiebehandling er målrettet familier, der
-          har behov for en længerevarende indsats for at kunne løse konkrete
-          problematikker omkring et barn eller en ung med varig
-          funktionsnedsættelse.
-        </p>
+        <div class="flex flex-col gap-4 text-sm leading-relaxed">
+          <p>
+            Rådgivning dækker forskellige typer af indsatser, der har til formål
+            at få hverdagen til at fungere for familien. Forløbet tilrettelægges
+            i samarbejde med familien med udgangspunkt i familiens behov og
+            udfordringer. Dette kan både være korte og længerevarende forløb.
+          </p>
+          <p>
+            Rådgivning er målrettet familier, der har behov for en specialiseret
+            indsats til at løse konkrete problematikker omkring et barn eller en
+            ung med ADHD eller autisme.
+          </p>
+        </div>
       </article>
       <Button href="/radgivning" arrow theme="dark" size="md">
         Om Rådgivning
@@ -140,15 +141,21 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
     <div class="flex flex-col gap-12 sm:col-span-4">
       <article class="grid max-w-prose gap-4">
         <Heading2>Om Lasse Nielsen</Heading2>
-        <p class="text-sm leading-relaxed">
-          Mit navn er Lasse, og jeg er en erfaren rådgiver med over 20 års
-          ekspertise inden for støtte til familier, der har familiemedlemmer med
-          ADHD og/eller autisme. Som selvstændig rådgiver er mit mål at skabe en
-          positiv og tryg atmosfære, hvor jeg kan hjælpe jer med at navigere
-          gennem udfordringerne ved disse diagnoser. Sammen vil vi finde
-          skræddersyede løsninger og skabe en stærkere familieenhed. Velkommen
-          til et sted, hvor forståelse og støtte går hånd i hånd.
-        </p>
+        <div class="flex flex-col gap-4 text-sm leading-relaxed">
+          <p>
+            Mit navn er Lasse, og jeg er en erfaren rådgiver med over 20 års
+            erfaring i at støtte familier, der har familiemedlemmer med ADHD
+            og/eller autisme. Som selvstændig rådgiver er mit mål at skabe en
+            positiv og tryg atmosfære, hvor jeg kan hjælpe jer med at navigere
+            gennem udfordringerne ved disse diagnoser.
+          </p>
+          <p>
+            Det er meget vigtigt for mig, at vi sammen finder skræddersyede
+            løsninger og værktøjer der passer lige præcist til jeres familie.
+            Dette vil selvfølgelig tage udgangspunkt i den nyeste viden på
+            området.
+          </p>
+        </div>
       </article>
       <Button href="/om" arrow theme="dark" size="md">Om Lasse</Button>
     </div>
@@ -168,7 +175,7 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
       <BriefcaseSvg class="col-span-1 h-full fill-slate-50" />
       <div class="col-span-2 flex flex-col justify-center">
         <p class="text-3xl font-bold">
-          22 <span class="text-sm font-normal">års</span>
+          25+ <span class="text-sm font-normal">års</span>
         </p>
         <p class="text-base">erfaring</p>
       </div>
@@ -177,7 +184,7 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
       <GradutionSvg class="col-span-1 h-full fill-slate-50" />
       <div class="col-span-2 flex flex-col justify-center">
         <p class="text-3xl font-bold">
-          17 <span class="text-sm font-normal">års</span>
+          20 <span class="text-sm font-normal">års</span>
         </p>
         <p class="text-base">specialisering</p>
       </div>
@@ -194,12 +201,12 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
         <p>Kolding<br />Kommune</p>
       </div>
       <div class="flex w-40 items-center gap-4">
-        <Image src={BillundKommune} width={60} height={60} alt="" />
-        <p>Billund<br />Kommune</p>
+        <Image src={FredericiaKommune} width={60} height={60} alt="" />
+        <p>Fredericia<br />Kommune</p>
       </div>
       <div class="flex w-40 items-center gap-4">
         <Image src={FredericiaKommune} width={60} height={60} alt="" />
-        <p>Fredericia<br />Kommune</p>
+        <p>Varde<br />Kommune</p>
       </div>
     </div>
   </section>
@@ -219,12 +226,13 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
         statement="Jeg kunne ønske at havde et billede hængende af Lasse, så kunne jeg bare kigge op på ham og forestille mig hvad han ville svare, så kunne vi hurtigt komme videre."
       />
       <Testimonial
-        clientName="Familien T."
-        statement="Vi havde aldrig troet at der fandtes en som Lasse der kunne redde vores familie og ægteskab samtidigt."
+        clientName="Familien K."
+        statement="Det var godt, at blive bekræftet i, at vi ikke er forkerte eller dårlige forældre, men at vi bare havde brug for lidt støtte til at få en god hverdag."
+      />
+      <Testimonial
+        clientName="Familien J."
+        statement="Vi har virkelig fået en kvalificeret støtte og ny viden om at være forældre til et barn med ADHD og autisme. Udover dette, havde Lasse også et stort fokus på at søskende også skulle ses og høres."
       />
     </div>
   </section>
-  <ColumnLayout aria-label="Kontakt">
-    <ContactForm />
-  </ColumnLayout>
 </PageLayout>
