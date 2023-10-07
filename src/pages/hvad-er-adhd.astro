@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import ColumnLayout from "../layouts/ColumnLayout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 import Button from "../components/Button.astro";
@@ -9,12 +8,13 @@ import Heading1 from "../components/Heading1.astro";
 import ChildOnPillar from "../assets/images/child-on-pillar.jpg";
 import GirlSpeedWalking from "../assets/images/girl-speed-walking.jpg";
 import PillowFight from "../assets/images/pillow-fight.jpg";
+import ColumnLayoutImage from "../components/ColumnLayoutImage.astro";
 ---
 
-<PageLayout title="Hvad Er ADHD? | ADHD Og Autisme Konsulent" description="">
+<PageLayout title="Hvad Er ADHD?" description="">
   <ColumnLayout>
     <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
-      <Heading1>Hvad er autisme?</Heading1>
+      <Heading1>Hvad er ADHD?</Heading1>
       <div class="grid gap-4">
         <p>
           Omkring 2-3% af alle børn får diagnosen ADHD. ADHD er en
@@ -40,19 +40,15 @@ import PillowFight from "../assets/images/pillow-fight.jpg";
         mindre synlig, hyperaktivitet.
       </p>
     </article>
-    <Image
+    <ColumnLayoutImage
       src={PillowFight}
       alt="To børn har pudekamp på en seng"
-      quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
     />
   </ColumnLayout>
   <ColumnLayout>
-    <Image
+    <ColumnLayoutImage
       src={GirlSpeedWalking}
       alt="Gående fartsløret pige foran grønt hus"
-      quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
     />
     <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
       <Heading2>Hvad skyldes symptomerne?</Heading2>
@@ -86,11 +82,9 @@ import PillowFight from "../assets/images/pillow-fight.jpg";
         </p>
       </div>
     </article>
-    <Image
+    <ColumnLayoutImage
       src={ChildOnPillar}
       alt="Pige som læser i en bog mens hun sidder på en høj sten"
-      quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
     />
   </ColumnLayout>
   <section class="flex flex-col items-center gap-4">

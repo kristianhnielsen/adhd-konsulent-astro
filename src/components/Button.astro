@@ -35,6 +35,7 @@ const { theme, arrow, size, class: className, ...props } = Astro.props as Props;
         height="18"
         viewBox="0 0 21 18"
         class={twMerge(
+          "max-[374px]:hidden",
           theme === "dark" && "fill-slate-700",
           theme === "light" && "fill-slate-50",
           theme === "red" && "fill-slate-50",

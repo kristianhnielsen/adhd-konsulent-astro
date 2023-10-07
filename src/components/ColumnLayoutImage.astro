@@ -1,0 +1,30 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Image } from "astro:assets";
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  class?: string;
+  quality?: "low" | "mid" | "high";
+}
+const {
+  src,
+  alt,
+  class: className,
+  quality = "low",
+  ...props
+} = Astro.props as Props;
+---
+
+<Image
+  {src}
+  {alt}
+  {quality}
+  class={twMerge(
+    `aspect-square place-self-center rounded-lg object-cover object-center shadow col-span-1 sm:aspect-[2/3] sm:max-h-full`,
+    className,
+  )}
+  {...props}
+/>

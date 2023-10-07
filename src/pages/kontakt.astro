@@ -1,23 +1,17 @@
 ---
-import { Image } from "astro:assets";
 import ColumnLayout from "../layouts/ColumnLayout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
-import Heading2 from "../components/Heading2.astro";
 import Heading1 from "../components/Heading1.astro";
-import Button from "../components/Button.astro";
 
 // Images
-import PhoneSvg from "../assets/icons/PhoneSvg.astro";
-import EmailSvg from "../assets/icons/EmailSvg.astro";
-import LocationPinSvg from "../assets/icons/LocationPinSvg.astro";
-import PersonSvg from "../assets/icons/PersonSvg.astro";
-import BlockWireToyImg from "../assets/images/square-on-wire.jpg";
 import BoyOnShouldersImg from "../assets/images/boy-on-shoulders.jpg";
+import ColumnLayoutImage from "../components/ColumnLayoutImage.astro";
+import ContactInformation from "../components/ContactInformation.astro";
 ---
 
-<PageLayout title="Kontakt| ADHD Og Autisme Konsulent" description="">
+<PageLayout title="Kontakt" description="">
   <ColumnLayout>
-    <article class="flex flex-col gap-4 sm:col-span-4">
+    <article class="flex flex-col gap-4 sm:col-span-2">
       <Heading1>Kontakt</Heading1>
       <p>
         Din vej mod forandring starter her. Udfyld formularen og jeg vil
@@ -26,90 +20,13 @@ import BoyOnShouldersImg from "../assets/images/boy-on-shoulders.jpg";
         autisme. Jeg ser frem til at være en del af jeres rejse mod et mere
         balanceret familieliv.
       </p>
-      <div class="flex flex-col gap-4 sm:flex-row">
-        <Button size="md" theme="red" href="#kontakt-formular">
-          Bliv Kontaktet
-        </Button>
-        <Button size="md" theme="dark" href="#kontakt-info">
-          Kontakt Information
-        </Button>
-      </div>
     </article>
-    <Image
+    <ColumnLayoutImage
       src={BoyOnShouldersImg}
       alt="Barn sidder på skuldrene af en far"
-      quality={80}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-left shadow sm:col-span-2"
+      quality={"low"}
+      class="object-left"
     />
   </ColumnLayout>
-  <ColumnLayout>
-    <address
-      id="kontakt-info"
-      class="flex w-full flex-col gap-8 not-italic sm:col-span-3"
-    >
-      <Heading2>Kontakt Lasse</Heading2>
-      <p
-        class="group flex items-center gap-4 rounded-lg bg-slate-50 p-4 shadow transition-all hover:shadow-lg focus-visible:outline-offset-4 motion-safe:active:outline-offset-0"
-      >
-        <PersonSvg
-          class="w-16 rounded-lg fill-slate-700 p-1 transition-all group-hover:bg-rose-800 group-hover:fill-slate-50 group-focus-visible:bg-rose-800 group-focus-visible:fill-slate-50"
-        />
-        <span
-          class="transition-colors duration-100 group-hover:text-rose-700 group-focus-visible:text-rose-700"
-          >Lasse Nielsen</span
-        >
-      </p>
-      <a
-        href="https://goo.gl/maps/uLkDGnW7TTNKPpz77"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Se på kort"
-        class="group flex items-center gap-4 rounded-lg bg-slate-50 p-4 shadow transition-all hover:shadow-lg focus-visible:outline-offset-4 motion-safe:active:outline-offset-0"
-      >
-        <LocationPinSvg
-          class="w-16 rounded-lg fill-slate-700 p-1 transition-all group-hover:bg-rose-800 group-hover:fill-slate-50 group-focus-visible:bg-rose-800 group-focus-visible:fill-slate-50"
-        />
-        <span
-          class="transition-colors duration-100 group-hover:text-rose-700 group-hover:underline group-focus-visible:text-rose-700 group-focus-visible:underline"
-          >Bramdrupvej 94, 6040 Egtved</span
-        >
-      </a>
-      <a
-        href="mailto:donsen.lassen@hotmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Send e-mail"
-        class="group flex items-center gap-4 rounded-lg bg-slate-50 p-4 shadow transition-all hover:shadow-lg focus-visible:outline-offset-4 motion-safe:active:outline-offset-0"
-      >
-        <EmailSvg
-          class="w-16 rounded-lg fill-slate-700 p-1 transition-all group-hover:bg-rose-800 group-hover:fill-slate-50 group-focus-visible:bg-rose-800 group-focus-visible:fill-slate-50"
-        />
-        <span
-          class="transition-colors duration-100 group-hover:text-rose-700 group-hover:underline group-focus-visible:text-rose-700 group-focus-visible:underline"
-          >donsen.lassen@hotmail.com</span
-        >
-      </a>
-      <a
-        href="tel:+4540613102"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Ring til mig"
-        class="group flex items-center gap-4 rounded-lg bg-slate-50 p-4 shadow transition-all hover:shadow-lg focus-visible:outline-offset-4 motion-safe:active:outline-offset-0"
-      >
-        <PhoneSvg
-          class="w-16 rounded-lg fill-slate-700 p-1 transition-all group-hover:bg-rose-800 group-hover:fill-slate-50 group-focus-visible:bg-rose-800 group-focus-visible:fill-slate-50"
-        />
-        <span
-          class="transition-colors duration-100 group-hover:text-rose-700 group-hover:underline group-focus-visible:text-rose-700 group-focus-visible:underline"
-          >+45 40 61 31 02</span
-        >
-      </a>
-    </address>
-    <Image
-      src={BlockWireToyImg}
-      alt="Legetøj med træklodser på metalsnore"
-      quality={80}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover shadow sm:col-span-3"
-    />
-  </ColumnLayout>
+  <ContactInformation />
 </PageLayout>

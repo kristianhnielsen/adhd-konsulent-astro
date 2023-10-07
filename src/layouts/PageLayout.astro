@@ -26,15 +26,20 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <Fonts />
     <!-- <Analytics/> -->
-    <title>{title}</title>
+    <title>
+      {
+        title === "Forside"
+          ? "ADHD Og Autisme Konsulent"
+          : `${title} - ADHD Og Autisme Konsulent`
+      }
+    </title>
     <ViewTransitions />
   </head>
   <body>
     <NavigationBar />
     <main
       id="main-content"
-      class="mx-8 my-16 grid max-w-screen-xl gap-16 leading-6 xl:mx-auto"
-      transition:animate="slide"
+      class="mx-4 my-16 grid max-w-screen-xl gap-16 leading-6 sm:mx-8 xl:mx-auto"
     >
       <slot />
     </main>

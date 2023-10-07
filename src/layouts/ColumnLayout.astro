@@ -2,19 +2,11 @@
 import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
 
-interface Props extends HTMLAttributes<"section"> {
-  theme?: "red" | "light";
-}
-
-const { theme = "light", ...props } = Astro.props;
+const { class: className, ...props } = Astro.props as HTMLAttributes<"section">;
 ---
 
 <section
-  class={twMerge(
-    `grid grid-cols-1 sm:gap-16 gap-8 sm:grid-cols-6 w-full`,
-    theme === "red" && "bg-rose-800 text-slate-50 p-16",
-    theme === "light" && "text-slate-700 mx-auto max-w-screen-lg",
-  )}
+  class={twMerge("grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-12", className)}
   {...props}
 >
   <slot />

@@ -1,27 +1,29 @@
 ---
-import { Image } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 import ColumnLayout from "../layouts/ColumnLayout.astro";
 import Button from "../components/Button.astro";
 import Heading2 from "../components/Heading2.astro";
 import Heading1 from "../components/Heading1.astro";
-import Testimonial from "../components/Testimonial.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import Achievements from "../components/Achievements.astro";
+import MunicipalityCard from "../components/MunicipalityCard.astro";
+import Testimonials from "../assets/content/testimonials.json";
 
 // Images
 import FamilyHandsSvg from "../assets/images/FamilyHandsSvg.astro";
-import HouseSvg from "../assets/icons/HouseSvg.astro";
-import BriefcaseSvg from "../assets/icons/BriefcaseSvg.astro";
-import GradutionSvg from "../assets/icons/GradutionSvg.astro";
 import KoldingKommune from "../assets/icons/crests/Kolding.svg";
 import BillundKommune from "../assets/icons/crests/Billund.svg";
+import VardeKommune from "../assets/icons/crests/Varde.svg";
 import FredericiaKommune from "../assets/icons/crests/Fredericia.svg";
 import ColorBricksImg from "../assets/images/color-bricks.jpg";
 import LasseProfileImg from "../assets/images/lasse-profile2.png";
+import ColumnLayoutImage from "../components/ColumnLayoutImage.astro";
+import ContactInformation from "../components/ContactInformation.astro";
 ---
 
-<PageLayout title="ADHD Og Autisme Konsulent" description="">
+<PageLayout title="Forside" description="">
   <ColumnLayout aria-label="Hero">
-    <div class="flex flex-col gap-12 sm:col-span-4">
+    <div class="flex flex-col gap-12 sm:col-span-2">
       <article class="max-w-prose">
         <Heading1>ADHD og autisme konsulent</Heading1>
         <p class="leading-normal">
@@ -30,18 +32,23 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
           finde struktur i en kaotisk hverdag.
         </p>
       </article>
-      <Button href="#kontakt" theme="red" size="lg">
-        Gratis Afklarende Samtale
-      </Button>
+      <div class="flex gap-4">
+        <Button href="#kontakt" theme="red" size="lg">
+          Gratis Afklarende Samtale
+        </Button>
+        <!-- <Button size="lg" , href="/til-offentlige-myndigheder" theme="dark">
+          Er du fra en kommune?
+        </Button> -->
+      </div>
     </div>
     <FamilyHandsSvg
       handsFillColor="fill-rose-800"
       handsStrokeColor="stroke-rose-950"
-      class="w-2/3 max-w-xs self-center justify-self-center sm:col-span-2 sm:w-full"
+      class="w-2/3 max-w-xs self-center justify-self-center sm:w-full"
     />
   </ColumnLayout>
   <ColumnLayout aria-label="Rådgivning">
-    <div class="flex max-w-prose flex-col gap-12 sm:col-span-4">
+    <div class="flex max-w-prose flex-col gap-12 sm:col-span-2">
       <article class="grid gap-4">
         <Heading2>Rådgivning</Heading2>
         <div class="flex flex-col gap-4 text-sm leading-relaxed">
@@ -62,16 +69,17 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
         Om Rådgivning
       </Button>
     </div>
-    <Image
+    <ColumnLayoutImage
       src={ColorBricksImg}
       alt="Klodsmajor spil med farvede klodser og en barnehånd som holder en klods"
-      quality={10}
-      class="aspect-[2/3] w-48 self-center justify-self-center rounded-lg object-cover shadow sm:col-span-2"
     />
   </ColumnLayout>
-  <ColumnLayout theme="red" aria-label="Om ADHD og autisme">
+  <section
+    class="grid grid-cols-1 gap-16 bg-rose-800 p-8 text-slate-50 sm:justify-between md:grid-cols-2"
+    aria-label="Om ADHD og autisme"
+  >
     <div
-      class="flex flex-col gap-12 justify-self-center sm:col-span-3"
+      class="flex flex-col gap-12 justify-self-center"
       aria-label="Hvad er ADHD"
     >
       <article class="grid max-w-sm gap-4">
@@ -99,7 +107,7 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
       </Button>
     </div>
     <div
-      class="flex flex-col gap-12 justify-self-center sm:col-span-3"
+      class="flex max-w-prose flex-col gap-12 justify-self-center sm:max-w-full"
       aria-label="Hvad er autisme"
     >
       <article class="grid max-w-sm gap-4">
@@ -130,15 +138,14 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
         Læs mere om autisme
       </Button>
     </div>
-  </ColumnLayout>
+  </section>
   <ColumnLayout aria-label="Om Lasse">
-    <Image
+    <ColumnLayoutImage
       src={LasseProfileImg}
       alt="Lasse profil"
-      quality={10}
-      class="aspect-[2/3] max-w-xs self-center justify-self-center rounded-lg object-cover shadow sm:col-span-2"
+      class="object-top"
     />
-    <div class="flex flex-col gap-12 sm:col-span-4">
+    <div class="flex flex-col gap-12 sm:col-span-2">
       <article class="grid max-w-prose gap-4">
         <Heading2>Om Lasse Nielsen</Heading2>
         <div class="flex flex-col gap-4 text-sm leading-relaxed">
@@ -160,79 +167,36 @@ import LasseProfileImg from "../assets/images/lasse-profile2.png";
       <Button href="/om" arrow theme="dark" size="md">Om Lasse</Button>
     </div>
   </ColumnLayout>
-  <section
-    class="flex flex-col items-center justify-evenly gap-4 bg-rose-800 p-8 text-slate-50 sm:flex-row"
-    aria-label="Præstationer"
-  >
-    <div class="grid grid-cols-3 gap-4">
-      <HouseSvg class="col-span-1 h-full fill-slate-50" />
-      <div class="col-span-2 flex flex-col justify-center">
-        <p class="text-3xl font-bold">500+</p>
-        <p class="text-base">familier</p>
-      </div>
-    </div>
-    <div class="grid min-w-fit grid-cols-3 gap-4">
-      <BriefcaseSvg class="col-span-1 h-full fill-slate-50" />
-      <div class="col-span-2 flex flex-col justify-center">
-        <p class="text-3xl font-bold">
-          25+ <span class="text-sm font-normal">års</span>
-        </p>
-        <p class="text-base">erfaring</p>
-      </div>
-    </div>
-    <div class="grid min-w-fit grid-cols-3 gap-4">
-      <GradutionSvg class="col-span-1 h-full fill-slate-50" />
-      <div class="col-span-2 flex flex-col justify-center">
-        <p class="text-3xl font-bold">
-          20 <span class="text-sm font-normal">års</span>
-        </p>
-        <p class="text-base">specialisering</p>
-      </div>
-    </div>
-  </section>
+  <Achievements background="red" />
   <section
     class="mx-auto grid w-full max-w-screen-lg gap-4"
     aria-label="Samarbejdspartnere"
   >
     <Heading2>Mine samarbejdspartnere</Heading2>
-    <div class="flex flex-wrap justify-evenly gap-4">
-      <div class="flex w-40 items-center gap-4">
-        <Image src={KoldingKommune} width={60} height={60} alt="" />
-        <p>Kolding<br />Kommune</p>
-      </div>
-      <div class="flex w-40 items-center gap-4">
-        <Image src={FredericiaKommune} width={60} height={60} alt="" />
-        <p>Fredericia<br />Kommune</p>
-      </div>
-      <div class="flex w-40 items-center gap-4">
-        <Image src={FredericiaKommune} width={60} height={60} alt="" />
-        <p>Varde<br />Kommune</p>
-      </div>
+    <div class="grid grid-cols-1 gap-4 text-sm sm:grid-cols-3">
+      <MunicipalityCard crest={KoldingKommune} municipality="Kolding" />
+      <MunicipalityCard crest={FredericiaKommune} municipality="Fredericia" />
+      <MunicipalityCard crest={VardeKommune} municipality="Varde" />
+      <MunicipalityCard crest={BillundKommune} municipality="Billund" />
     </div>
   </section>
   <section
-    id="kontakt"
     class="mx-auto grid w-full max-w-screen-lg gap-8"
     aria-label="Hvad andre siger"
   >
     <Heading2>Hvad andre siger</Heading2>
-    <div class="grid grid-cols-1 gap-8 text-sm sm:grid-cols-3">
-      <Testimonial
-        clientName="Familien T."
-        statement="Vi havde aldrig troet at der fandtes en som Lasse der kunne redde vores familie og ægteskab samtidigt."
-      />
-      <Testimonial
-        clientName="Familien O."
-        statement="Jeg kunne ønske at havde et billede hængende af Lasse, så kunne jeg bare kigge op på ham og forestille mig hvad han ville svare, så kunne vi hurtigt komme videre."
-      />
-      <Testimonial
-        clientName="Familien K."
-        statement="Det var godt, at blive bekræftet i, at vi ikke er forkerte eller dårlige forældre, men at vi bare havde brug for lidt støtte til at få en god hverdag."
-      />
-      <Testimonial
-        clientName="Familien J."
-        statement="Vi har virkelig fået en kvalificeret støtte og ny viden om at være forældre til et barn med ADHD og autisme. Udover dette, havde Lasse også et stort fokus på at søskende også skulle ses og høres."
-      />
+    <div
+      class="grid grid-cols-1 justify-items-center gap-8 text-sm sm:grid-cols-3"
+    >
+      {
+        Testimonials.map((client) => (
+          <TestimonialCard
+            clientName={client.name}
+            statement={client.statement}
+          />
+        ))
+      }
     </div>
   </section>
+  <ContactInformation />
 </PageLayout>

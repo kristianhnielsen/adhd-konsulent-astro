@@ -1,4 +1,5 @@
 ---
+import BrandLogo from "../../assets/icons/BrandLogo.astro";
 import NavLink from "./NavLink.astro";
 import SkipToContent from "./SkipToContent.astro";
 
@@ -15,8 +16,10 @@ import SkipToContent from "./SkipToContent.astro";
   <a
     href="/"
     aria-label="site name"
-    class="text-sm font-bold leading-none outline-slate-700 transition-all hover:border-b-4 hover:border-rose-800 focus-visible:outline-offset-4 motion-safe:active:outline-offset-0"
-    >ADHD Og Autisme Konsulent</a
+    class="flex items-center gap-2 text-sm font-bold leading-none outline-slate-700 transition-all hover:underline focus-visible:outline-offset-4 motion-safe:active:outline-offset-0"
+  >
+    <BrandLogo class="w-6" />
+     ADHD Og Autisme Konsulent</a
   >
   <nav
     data-visible="false"

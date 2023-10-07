@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import ColumnLayout from "../layouts/ColumnLayout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 import Button from "../components/Button.astro";
@@ -10,9 +9,10 @@ import Heading1 from "../components/Heading1.astro";
 import ChildLegoImg from "../assets/images/child-lego.jpg";
 import LetterCubesImg from "../assets/images/letter-cubes.jpg";
 import ChildHeartImg from "../assets/images/child-heart.jpg";
+import ColumnLayoutImage from "../components/ColumnLayoutImage.astro";
 ---
 
-<PageLayout title="Hvad Er Autisme? | ADHD Og Autisme Konsulent" description="">
+<PageLayout title="Hvad Er Autisme?" description="">
   <ColumnLayout>
     <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
       <Heading1>Hvad er autisme?</Heading1>
@@ -50,19 +50,13 @@ import ChildHeartImg from "../assets/images/child-heart.jpg";
         </p>
       </div>
     </article>
-    <Image
-      src={ChildLegoImg}
-      alt="Barn som leger med Lego"
-      quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
-    />
+    <ColumnLayoutImage src={ChildLegoImg} alt="Barn som leger med Lego" />
   </ColumnLayout>
   <ColumnLayout>
-    <Image
+    <ColumnLayoutImage
       src={LetterCubesImg}
       alt="Træklodser med farvede bogstaver stablet oven på hinanden"
-      quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-left shadow sm:col-span-2"
+      class="object-left"
     />
     <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
       <Heading2>Hvad er årsagen til autisme?</Heading2>
@@ -118,11 +112,9 @@ import ChildHeartImg from "../assets/images/child-heart.jpg";
         </p>
       </div>
     </article>
-    <Image
+    <ColumnLayoutImage
       src={ChildHeartImg}
       alt="Barn med hænderne på et rødt hjerte"
-      quality={90}
-      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
     />
   </ColumnLayout>
   <section class="flex flex-col items-center gap-4">

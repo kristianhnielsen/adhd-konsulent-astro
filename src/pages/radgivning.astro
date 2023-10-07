@@ -1,13 +1,12 @@
 ---
 import ColumnLayout from "../layouts/ColumnLayout.astro";
 import PageLayout from "../layouts/PageLayout.astro";
-import { Image } from "astro:assets";
 import Heading2 from "../components/Heading2.astro";
 import Heading1 from "../components/Heading1.astro";
 import Button from "../components/Button.astro";
 import PriceCard from "../components/PriceCard.astro";
 import ProcessStep from "../components/ProcessStep.astro";
-import Testimonial from "../components/Testimonial.astro";
+import Testimonials from "../assets/content/testimonials.json";
 
 // Images
 import FamilyHands from "../assets/images/family-hands.jpg";
@@ -16,12 +15,14 @@ import ConversationSvg from "../assets/icons/ConversationSvg.astro";
 import TaskListSvg from "../assets/icons/TaskListSvg.astro";
 import StrategySvg from "../assets/icons/StrategySvg.astro";
 import RecycleSvg from "../assets/icons/RecycleSvg.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import ColumnLayoutImage from "../components/ColumnLayoutImage.astro";
 ---
 
-<PageLayout title="Rådgivning | ADHD Og Autisme Konsulent" description="">
+<PageLayout title="Rådgivning" description="">
   <ColumnLayout>
     <article
-      class="flex max-w-prose flex-col gap-8 sm:col-span-4"
+      class="flex max-w-prose flex-col gap-8 sm:col-span-2"
       aria-label="rådgivning"
     >
       <Heading1>Rådgivning</Heading1>
@@ -41,19 +42,18 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
         </p>
       </div>
     </article>
-    <Image
+    <ColumnLayoutImage
       src={FamilyHands}
       alt="Hænder fra en familie lagt overpå hinanden"
-      class="aspect-[2/3] self-center justify-self-center rounded-lg shadow sm:col-span-2"
     />
   </ColumnLayout>
   <ColumnLayout>
-    <Image
+    <ColumnLayoutImage
       src={MotherDaughterForest}
       alt="Mor og datter går hånd i hånd i en skov"
-      class="aspect-[2/3] self-center justify-self-center rounded-lg object-cover object-center shadow sm:col-span-2"
+      class="order-last sm:order-first"
     />
-    <article class="grid gap-8 sm:col-span-4" aria-label="mål">
+    <article class="grid gap-8 sm:col-span-2" aria-label="mål">
       <Heading2>Mål</Heading2>
       <ul class="grid">
         Generelle mål med rådgivning er at etablere en hverdag der er
@@ -87,8 +87,8 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
       </p>
     </article>
   </ColumnLayout>
-  <ColumnLayout>
-    <section class="sm:col-span-2" aria-label="forløb">
+  <ColumnLayout class="gap-32 sm:gap-8">
+    <section class="flex flex-col gap-8 sm:col-span-1" aria-label="Forløb">
       <Heading2>Forløb</Heading2>
       <div class="flex flex-col items-center gap-4">
         <ProcessStep
@@ -134,7 +134,7 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
       </div>
     </section>
     <section
-      class="mx-auto flex h-full flex-col gap-4 sm:col-span-4"
+      class="mx-auto flex h-full flex-col gap-4 sm:col-span-2"
       aria-label="pris"
     >
       <Heading2>Pris</Heading2>
@@ -177,23 +177,17 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
     aria-label="hvad andre siger"
   >
     <Heading2>Hvad andre siger</Heading2>
-    <div class="grid grid-cols-1 gap-8 text-sm sm:grid-cols-3">
-      <Testimonial
-        clientName="Familien T."
-        statement="Vi havde aldrig troet at der fandtes en som Lasse der kunne redde vores familie og ægteskab samtidigt."
-      />
-      <Testimonial
-        clientName="Familien O."
-        statement="Jeg kunne ønske at havde et billede hængende af Lasse, så kunne jeg bare kigge op på ham og forestille mig hvad han ville svare, så kunne vi hurtigt komme videre."
-      />
-      <Testimonial
-        clientName="Familien K."
-        statement="Det var godt, at blive bekræftet i, at vi ikke er forkerte eller dårlige forældre, men at vi bare havde brug for lidt støtte til at få en god hverdag."
-      />
-      <Testimonial
-        clientName="Familien J."
-        statement="Vi har virkelig fået en kvalificeret støtte og ny viden om at være forældre til et barn med ADHD og autisme. Udover dette, havde Lasse også et stort fokus på at søskende også skulle ses og høres."
-      />
+    <div
+      class="grid grid-cols-1 justify-items-center gap-8 text-sm sm:grid-cols-3"
+    >
+      {
+        Testimonials.map((client) => (
+          <TestimonialCard
+            clientName={client.name}
+            statement={client.statement}
+          />
+        ))
+      }
     </div>
   </section>
 </PageLayout>

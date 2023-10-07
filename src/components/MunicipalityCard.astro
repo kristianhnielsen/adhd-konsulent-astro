@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  crest: ImageMetadata;
+  municipality: string;
+}
+
+const { crest, municipality } = Astro.props;
+---
+
+<div
+  class="flex items-center gap-2 rounded-lg bg-slate-50 px-4 py-2 shadow transition-all hover:shadow-lg"
+>
+  <Image
+    src={crest}
+    alt={`${municipality} kommunes logo`}
+    class="w-12 sm:w-16"
+  />
+  <p class="break-words">{municipality} Kommune</p>
+</div>

@@ -1,0 +1,47 @@
+---
+import { twMerge } from "tailwind-merge";
+import BriefcaseSvg from "../assets/icons/BriefcaseSvg.astro";
+import GradutionSvg from "../assets/icons/GradutionSvg.astro";
+import HouseSvg from "../assets/icons/HouseSvg.astro";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"section"> {
+  background: "white" | "red";
+}
+const { background, ...props } = Astro.props;
+---
+
+<section
+  class={twMerge(
+    "grid grid-cols-1 items-center sm:place-items-center p-8 gap-4 sm:grid-cols-3 ",
+    background === "white" && `fill-slate-700 text-slate-700`,
+    background === "red" && `bg-rose-800 fill-slate-50 text-slate-50`,
+  )}
+  {...props}
+>
+  <div class="flex items-center gap-2">
+    <HouseSvg class="col-span-1 w-16 justify-self-end" />
+    <div class="col-span-2 flex flex-col justify-center">
+      <p class="text-3xl font-bold">500+</p>
+      <p class="text-base">familier</p>
+    </div>
+  </div>
+  <div class="flex items-center gap-2">
+    <BriefcaseSvg class="col-span-1 w-16 justify-self-end" />
+    <div class="col-span-2 flex flex-col justify-center">
+      <p class="text-3xl font-bold">
+        25+ <span class="text-sm font-normal">års</span>
+      </p>
+      <p class="text-base">erfaring</p>
+    </div>
+  </div>
+  <div class="flex items-center gap-2">
+    <GradutionSvg class="col-span-1 w-16 justify-self-end" />
+    <div class="col-span-2 flex flex-col justify-center">
+      <p class="text-3xl font-bold">
+        20 <span class="text-sm font-normal">års</span>
+      </p>
+      <p class="text-base">specialisering</p>
+    </div>
+  </div>
+</section>
