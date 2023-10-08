@@ -4,6 +4,7 @@ import Fonts from "../components/head/Fonts.astro";
 import Footer from "../components/navigation/Footer.astro";
 import NavigationBar from "../components/navigation/NavigationBar.astro";
 import Analytics from "../components/head/Analytics.astro";
+import MetaData from "../components/head/MetaData.astro";
 
 interface Props {
   title: string;
@@ -19,20 +20,9 @@ const { title, description } = Astro.props;
   class="scroll-p-24 scroll-smooth bg-neutral-100 font-poppins text-slate-700 outline-slate-700"
 >
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <Fonts />
+    <MetaData title={title} description={description} />
     <!-- <Analytics/> -->
-    <title>
-      {
-        title === "Forside"
-          ? "ADHD Og Autisme Konsulent"
-          : `${title} - ADHD Og Autisme Konsulent`
-      }
-    </title>
     <ViewTransitions />
   </head>
   <body>
