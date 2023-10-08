@@ -4,15 +4,18 @@ import PageLayout from "../layouts/PageLayout.astro";
 import Button from "../components/Button.astro";
 import Heading2 from "../components/Heading2.astro";
 import Heading1 from "../components/Heading1.astro";
+import ColumnLayoutImage from "../components/ColumnLayoutImage.astro";
 
 // Images
 import ChildOnPillar from "../assets/images/child-on-pillar.jpg";
 import GirlSpeedWalking from "../assets/images/girl-speed-walking.jpg";
 import PillowFight from "../assets/images/pillow-fight.jpg";
-import ColumnLayoutImage from "../components/ColumnLayoutImage.astro";
 ---
 
-<PageLayout title="Hvad Er ADHD?" description="">
+<PageLayout
+  title="Hvad Er ADHD?"
+  description="Få indsigt i, hvad ADHD og ADD er, og om man kan leve et normalt liv med diagnosen ADHD/ADD."
+>
   <ColumnLayout>
     <article class="flex max-w-prose flex-col gap-8 sm:col-span-4">
       <Heading1>Hvad er ADHD?</Heading1>
