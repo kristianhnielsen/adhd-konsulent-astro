@@ -4,6 +4,5 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://adhd-konsulent.dk",
-  name: "ADHD og autisme konsulent",
   integrations: [tailwind(), sitemap()],
 });
