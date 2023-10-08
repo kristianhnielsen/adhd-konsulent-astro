@@ -1,0 +1,63 @@
+---
+import ColumnLayoutImage from "../components/ColumnLayoutImage.astro";
+import Heading1 from "../components/Heading1.astro";
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+
+// Images
+import PillowFight from "../assets/images/pillow-fight.jpg";
+import Heading2 from "../components/Heading2.astro";
+import Button from "../components/Button.astro";
+---
+
+<PageLayout
+  title="Offentlige myndigheder"
+  description="Er du fra en offentlig myndighed? Her finder du brugbar information om min rådgivning."
+>
+  <ColumnLayout>
+    <article class="flex flex-col gap-8 sm:col-span-2">
+      <Heading1>Offentlige Myndigheder</Heading1>
+      <p>
+        Er du fra en kommune eller offentlig myndighed, og er interesseret i at
+        samarbejde med mig? Her finder du brugbar information vedr. lovstof og
+        andre forhold.
+      </p>
+      <Button theme="dark" href="" size="md" arrow>Kontakt</Button>
+    </article>
+    <ColumnLayoutImage alt="" src={PillowFight} />
+  </ColumnLayout>
+  <ColumnLayout class="sm:grid-cols-2">
+    <article class="grid gap-4">
+      <Heading2>Lovstof</Heading2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, debitis
+        eius. Ex, harum laborum ad assumenda ullam earum unde dignissimos!
+      </p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quaerat
+        eius corrupti assumenda inventore deserunt at minus unde delectus,
+        aspernatur, nihil facilis animi! Quidem, reiciendis? Magni beatae
+        eligendi et in.
+      </p>
+      <Button theme="dark" href="" size="md" arrow>Kontakt</Button>
+    </article>
+    <article class="grid gap-4">
+      <Heading2>Dokumentation</Heading2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, debitis
+        eius. Ex, harum laborum ad assumenda ullam earum unde dignissimos!
+      </p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quaerat
+        eius corrupti assumenda inventore deserunt at minus unde delectus,
+        aspernatur, nihil facilis animi! Quidem, reiciendis? Magni beatae
+        eligendi et in.
+      </p>
+      <Button theme="dark" href="" size="md" arrow>Kontakt</Button>
+    </article>
+  </ColumnLayout>
+  <section class="flex flex-col items-center gap-4">
+    <p class="text-lg">Er der noget du ikke fik svar på?</p>
+    <Button href="/kontakt" theme="red" arrow size="md">Kontakt Lasse</Button>
+  </section>
+</PageLayout>
