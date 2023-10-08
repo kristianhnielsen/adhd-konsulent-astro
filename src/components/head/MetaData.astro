@@ -6,9 +6,10 @@ const locale = "da";
 const type = "website";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const image = {
-  src: SocialMediaImage.src,
+  src: new URL(SocialMediaImage.src, Astro.url),
   alt: "ADHD-Konsulent.dk logo on the left, and profile of Lasse Nielsen on the right",
 };
+console.log(image.src);
 
 interface Props {
   title: string;
