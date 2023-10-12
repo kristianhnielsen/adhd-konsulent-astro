@@ -6,8 +6,6 @@ import Heading1 from "../components/Heading1.astro";
 import Button from "../components/Button.astro";
 import PriceCard from "../components/PriceCard.astro";
 import ProcessStep from "../components/ProcessStep.astro";
-import Testimonials from "../assets/content/testimonials.json";
-import TestimonialCard from "../components/TestimonialCard.astro";
 import ColumnLayoutImage from "../components/ColumnLayoutImage.astro";
 
 // Images
@@ -17,6 +15,7 @@ import ConversationSvg from "../assets/icons/ConversationSvg.astro";
 import TaskListSvg from "../assets/icons/TaskListSvg.astro";
 import StrategySvg from "../assets/icons/StrategySvg.astro";
 import RecycleSvg from "../assets/icons/RecycleSvg.astro";
+import Testimonials from "../components/Testimonials.astro";
 ---
 
 <PageLayout
@@ -175,22 +174,5 @@ import RecycleSvg from "../assets/icons/RecycleSvg.astro";
       </div>
     </section>
   </ColumnLayout>
-  <section
-    class="mx-auto grid w-full max-w-screen-lg gap-8"
-    aria-label="hvad andre siger"
-  >
-    <Heading2>Hvad andre siger</Heading2>
-    <div
-      class="grid grid-cols-1 justify-items-center gap-8 text-sm sm:grid-cols-3"
-    >
-      {
-        Testimonials.map((client) => (
-          <TestimonialCard
-            clientName={client.name}
-            statement={client.statement}
-          />
-        ))
-      }
-    </div>
-  </section>
+  <Testimonials />
 </PageLayout>

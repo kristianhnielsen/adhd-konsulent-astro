@@ -4,10 +4,8 @@ import ColumnLayout from "../layouts/ColumnLayout.astro";
 import Button from "../components/Button.astro";
 import Heading2 from "../components/Heading2.astro";
 import Heading1 from "../components/Heading1.astro";
-import TestimonialCard from "../components/TestimonialCard.astro";
 import Achievements from "../components/Achievements.astro";
 import MunicipalityCard from "../components/MunicipalityCard.astro";
-import Testimonials from "../assets/content/testimonials.json";
 import ColumnLayoutImage from "../components/ColumnLayoutImage.astro";
 import ContactInformation from "../components/ContactInformation.astro";
 
@@ -19,6 +17,7 @@ import VardeKommune from "../assets/icons/crests/Varde.svg";
 import FredericiaKommune from "../assets/icons/crests/Fredericia.svg";
 import ColorBricksImg from "../assets/images/color-bricks.jpg";
 import LasseProfileImg from "../assets/images/lasse-profile.jpg";
+import Testimonials from "../components/Testimonials.astro";
 ---
 
 <PageLayout
@@ -185,23 +184,6 @@ import LasseProfileImg from "../assets/images/lasse-profile.jpg";
       <MunicipalityCard crest={BillundKommune} municipality="Billund" />
     </div>
   </section>
-  <section
-    class="mx-auto grid w-full max-w-screen-lg gap-8"
-    aria-label="Hvad andre siger"
-  >
-    <Heading2>Hvad andre siger</Heading2>
-    <div
-      class="grid grid-cols-1 justify-items-center gap-8 text-sm sm:grid-cols-3"
-    >
-      {
-        Testimonials.map((client) => (
-          <TestimonialCard
-            clientName={client.name}
-            statement={client.statement}
-          />
-        ))
-      }
-    </div>
-  </section>
+  <Testimonials />
   <ContactInformation />
 </PageLayout>
